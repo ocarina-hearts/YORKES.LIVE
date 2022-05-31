@@ -1,0 +1,5 @@
+//Caching schema
+<FilesMatch "\.(webp|jpg|ttf|png|css|woff2)$">
+Header set Cache-Control "public, max-age=1928448000"
+</FilesMatch>
+ 

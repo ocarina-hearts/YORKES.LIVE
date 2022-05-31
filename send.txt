@@ -1,0 +1,1 @@
+<button type="button" class="btn shakabutton text-orange border-2 bg-light" onclick="validateForm()"><i class="fa-solid fa-paper-plane"></i><span class="text-dark"> Send</span></button>
