@@ -15,9 +15,9 @@
 
     <title>YORKES.LIVE | Yorke Peninsula's Best Beach List</title>
     <meta charset="UTF-8">
-    <meta name="description" content="An interactive map of the Yorke Peninsula's best beaches. As voted on by you.">
+    <meta name="description" content="An interactive map of the Yorke Peninsula's best beaches. As voted on by you. Come explore each beach on the Yorke Peninsula with locations, pictures, access and attractions.">
     <meta name="keywords" content="yorkes yorke peninsula beaches map best surf">
-    <meta name="author" content="David Westbury Hills">
+    <meta name="author" content="Written by D.W. Hills, Length: 1 pages">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<meta property="og:url"                content="https://yorkes.live" />
@@ -375,8 +375,8 @@
                     <div class="d-flex">
                         <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook Coming Soon."><i class="fab fa-facebook-f fa-2xl" role="img" aria-label="Facebook link coming soon"></i></p>
                         <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Google Coming Soon."><i class="fab fa-google fa-2xl" role="img" aria-label="Google link coming soon"></i></p>
-                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram Coming Soon."><i class="fab fa-instagram fa-2xl" role="img" aria-label="Instagram link coming soon"></i></a>
-                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Github Coming Soon."><i class="fab fa-github fa-2xl" role="img" aria-label="Github coming soon"></i></a>
+                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram Coming Soon."><i class="fab fa-instagram fa-2xl" role="img" aria-label="Instagram link coming soon"></i></p>
+                        <a class="me-4 text-blue fake-anchor" href="https://github.com/DaveWestbury" data-bs-placement="top" title="Github Link"><i class="fab fa-github fa-2xl" role="img" aria-label="Github coming soon"></i></a>
                     </div>
 
                 </section>
