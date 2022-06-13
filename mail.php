@@ -3,7 +3,6 @@
 //uNeZ0NXoSSqD
 
 
-
 //Import the PHPMailer class into the global namespace
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
