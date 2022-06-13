@@ -650,35 +650,36 @@
 
 
 
-        <script>
-        // EMAIL VALIDATE & AJAX
-        function validateForm() {
+<script>
+    // EMAIL VALIDATE & AJAX
+    function validateForm() {
 
-            document.getElementById('status').innerHTML = "Sending...";
-            formData = {
-                'name': $('input[name=name]').val(),
-                'email': $('input[name=email]').val(),
-                'subject': $('input[name=subject]').val(),
-                'interest': $('select[name=interest]').val(),
-                'pitfall': $('textarea[name=pitfall]').val(),
-                'message': $('textarea[name=message]').val()
-            };
-            $.ajax({
-                url: "mail.php",
-                type: "POST",
-                data: formData,
-                success: function(data, textStatus, jqXHR) {
-
-                    $('#status').text(data.message);
-                    if (data.code) //If mail was sent successfully, reset the form.
-                        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    $('#status').text(jqXHR);
-                }
-            });
-        }
-        </script>
+        document.getElementById('status').innerHTML = "Sending...";
+        formData = {
+            'name': $('input[name=name]').val(),
+            'email': $('input[name=email]').val(),
+            'subject': $('input[name=subject]').val(),
+            'interest': $('select[name=interest]').val(),
+            'pitfall': $('textarea[name=pitfall]').val(),
+            'message': $('textarea[name=message]').val()
+        };
+        $.ajax({
+            url: "mail.php",
+            type: "POST",
+            dataType: 'json',
+            data: formData,
+            success: function(data) {
+                $('#status').text(data.message);
+                if (data.code) //If mail was sent successfully, reset the form.
+                    $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $('#status').text("Hmm.. This is embarrassing. Something has gone wrong. Please use the displayed email instead.");
+            }
+        });
+        return false; 
+    }
+    </script>
 
         <script>
         // IMPORT EMAIL SEND BUTTON
