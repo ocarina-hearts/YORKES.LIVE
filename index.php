@@ -651,7 +651,7 @@
 
 
 <script>
-    // EMAIL VALIDATE & AJAX
+    // EMAIL VALIDATE & AJAX test
     function validateForm() {
 
         document.getElementById('status').innerHTML = "Sending...";
