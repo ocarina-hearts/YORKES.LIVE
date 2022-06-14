@@ -3,35 +3,39 @@
 
 <head>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-659MYBSRDE"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-659MYBSRDE"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
 
-	  gtag('config', 'G-659MYBSRDE');
-	</script>
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-659MYBSRDE');
+    </script>
 
     <title>YORKES.LIVE | Yorke Peninsula's Best Beach List</title>
     <meta charset="UTF-8">
-    <meta name="description" content="An interactive map of the Yorke Peninsula's best beaches. As voted on by you. Come explore each beach on the Yorke Peninsula with locations, pictures, access and attractions.">
+    <meta name="description"
+        content="An interactive map of the Yorke Peninsula's best beaches. As voted on by you. Come explore each beach on the Yorke Peninsula with locations, pictures, access and attractions.">
     <meta name="keywords" content="yorkes yorke peninsula beaches map best surf">
     <meta name="author" content="Written by D.W. Hills, Length: 1 pages">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<meta property="og:url"                content="https://yorkes.live" />
-	<meta property="og:type"               content="website" />
-	<meta property="og:title"              content="Yorkes.Live" />
-	<meta property="og:description"        content="An interactive map of the Yorke Peninsula's best beaches. As voted on by you." />
-	<meta property="og:image"              content="https://yorkes.live/fb.png" />
+
+    <meta property="og:url" content="https://yorkes.live" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yorkes.Live" />
+    <meta property="og:description" content="An interactive map of the Yorke Peninsula's best beaches. As voted on by you." />
+    <meta property="og:image" content="https://yorkes.live/fb.png" />
 
     <link type="text/css" href="./styles.css" rel="stylesheet" />
-	
-	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- MODEL VIEWER -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -56,7 +60,7 @@
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbarID" >
+<body data-bs-spy="scroll" data-bs-target="#navbarID">
     <div id="landing" class="">
         <nav id="nav-color" class="navbar fixed-top navbar-expand-sm navbar-dark border-bottom border-3">
 
@@ -70,7 +74,7 @@
             <div id="navbarID" class="collapse navbar-collapse">
                 <div class="navbar-nav" role="">
                     <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#landing"><span class="align-middle">Map</span></a>
-                    <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#beaches"><span class="align-middle">Beaches</span></a>
+                    <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#mainlike"><span class="align-middle">Beaches</span></a>
                     <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#info"><span class="align-middle">Info</span></a>
                     <a class="nav-link nav-item  nav-text-light ps-2" aria-current="page" href="#contact"><span class="align-middle">Contact</span></a>
                 </div>
@@ -89,39 +93,39 @@
         <model-viewer id="hotspot-camera-view-demo" bounds="tight" src="export-1.11.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls autoplay poster="poster.webp"
             shadow-intensity="1" camera-orbit="180deg 50deg 15m" field-of-view="45deg" min-field-of-view="9deg" max-field-of-view="9deg" interpolation-decay="100"
             min-camera-orbit="auto auto 15%" max-camera-orbit="auto 75deg auto" orbit-sensitivity=".5" background-color="#455A64">
+            <div class="container">
+                <div id="annotation" class="text-center bg-white col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-sm-11 col-11">
+                    <button class="btn btn-sm bg-orange text-white orange-button" data-orbit="180deg 50deg 15m" data-target="auto"><i class="fa-solid fa-expand"></i> RESET VIEW</button>
+                    <a class="btn btn-sm bg-orange text-white orange-button" data-bs-toggle="collapse" href="#collapseControls" role="button" aria-expanded="false"
+                        aria-controls="collapseExample">MORE <i class="fa-solid fa-list-ul"></i></a>
+                    <a class="btn btn-sm bg-orange text-white orange-button" href="#mainlike">SCROLL <i class="fa-solid fa-turn-down"></i></a>
+                    <div class="form-check">
+                        <input class="form-check-input beaches" type="checkbox" value="" id="beachesCheck" value="1" onchange="valueChanged()" checked>
+                        <label class="form-check-label" for="beachesCheck">
+                            Beaches
+                        </label>
+                    </div>
+                    <div class="collapse" id="collapseControls">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="townNames" onchange="valueChanged()">
+                            <label class="form-check-label" for="townNames">
+                                Town Names
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="aboriginalPlace" onchange="valueChanged()" disabled>
+                            <label class="form-check-label" for="lakes">Aboriginal Place Names (Coming Soon)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="lakes" onchange="valueChanged()" disabled>
+                            <label class="form-check-label" for="lakes">Lakes (Coming Soon)</label>
+                        </div>
+                        <p class="card-text"><small class="text-muted">Version 1.5</small></p>
+                    </div>
 
-            <div id="annotation" class="text-center bg-white">
-                <button class="btn bg-orange text-white orange-button" data-orbit="180deg 50deg 15m" data-target="auto"><i class="fa-solid fa-expand"></i> RESET VIEW</button>
-                <div class="form-check">
-                    <input class="form-check-input beaches" type="checkbox" value="" id="beachesCheck" value="1" onchange="valueChanged()" checked>
-                    <label class="form-check-label" for="beachesCheck">
-                        Beaches
-                    </label>
-                </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="townNames" onchange="valueChanged()">
-                    <label class="form-check-label" for="townNames">
-                        Town Names
-                    </label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="aboriginalPlace" onchange="valueChanged()" disabled>
-                    <label class="form-check-label" for="lakes">
-                        Aboriginal Place Names
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="lakes" onchange="valueChanged()" disabled>
-                    <label class="form-check-label" for="lakes">
-                        Lakes<br>(Coming Soon)
-                    </label>
-                </div>
-
-                <a class="btn bg-orange text-white orange-button" href="#mainlike">DOWN <i class="fa-solid fa-turn-down"></i></a></h5>
-                <p class="card-text"><small class="text-muted">Version 1.5</small></p>
             </div>
-
             <?php include "db_liveButtons.php"?>
 
             <!-- towns -->
@@ -204,12 +208,18 @@
     <div id="beaches">
         <div class="container">
             <div class="row">
-                <h2 class="text-center py-4">STATIC BEACH LIST<span class="text-orange">.</span></h2>
+                <h2 class="text-center pt-4">STATIC BEACH LIST<span class="text-orange">.</span></h2>
+                <h4 id="top8" class="text-center pb-4">Top 8</h2>
             </div>
-            <div class="row masonary" data-masonry='{"percentPosition": true }'>
+            <div id="beachcontainer" class="row masonary" data-masonry='{"percentPosition": true }'>
 
                 <?php include "db_staticbeaches.php"?>
 
+            </div>
+            <div class="row col-6 mx-auto bg-rich mb-4">
+                <button id="morebeaches" type="submit" class="main-shakabutton btn btn-lg position-relative border-2 rounded-0">
+                    <h5 class="text-rich d-inline pt-2 px-4">Load More Beaches</h5>
+                </button>
             </div>
         </div>
     </div>
@@ -373,10 +383,14 @@
                         <span>Social networks might be something in the future.</span>
                     </div>
                     <div class="d-flex">
-                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook Coming Soon."><i class="fab fa-facebook-f fa-2xl" role="img" aria-label="Facebook link coming soon"></i></p>
-                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Google Coming Soon."><i class="fab fa-google fa-2xl" role="img" aria-label="Google link coming soon"></i></p>
-                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram Coming Soon."><i class="fab fa-instagram fa-2xl" role="img" aria-label="Instagram link coming soon"></i></p>
-                        <a class="me-4 text-blue fake-anchor" href="https://github.com/DaveWestbury" data-bs-placement="top" title="Github Link"><i class="fab fa-github fa-2xl" role="img" aria-label="Github coming soon"></i></a>
+                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook Coming Soon."><i class="fab fa-facebook-f fa-2xl" role="img"
+                                aria-label="Facebook link coming soon"></i></p>
+                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Google Coming Soon."><i class="fab fa-google fa-2xl" role="img"
+                                aria-label="Google link coming soon"></i></p>
+                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram Coming Soon."><i class="fab fa-instagram fa-2xl" role="img"
+                                aria-label="Instagram link coming soon"></i></p>
+                        <a class="me-4 text-blue fake-anchor" href="https://github.com/DaveWestbury" data-bs-placement="top" title="Github Link"><i class="fab fa-github fa-2xl" role="img"
+                                aria-label="Github coming soon"></i></a>
                     </div>
 
                 </section>
@@ -645,41 +659,68 @@
             })
         });
         </script>
+        <script>
+        //PULL MORE BEACHES FROM DB
 
 
+        $('#morebeaches').click(function() {
+            console.log("click");
+            $('#morebeaches').text("loading..");
+            $.ajax({
+                url: "db_moreBeaches.php",
+                dataType: "html",
+                success: function(data) {
+                    //$('#beachcontainer').append(data);
 
+                    var $items = $(data);
+                    $grid.append($items).masonry('appended', $items);
+                    $grid.imagesLoaded(function() {
+                        $grid.masonry();
+                    });
+                    $('#morebeaches').hide();
+                    $('#top8').text("All");
 
+                },
+                error: function(e) {
+                    alert('Error: ' + e);
+                }
+            });
 
-<script>
-    // EMAIL VALIDATE & AJAX test
-    function validateForm() {
-
-        document.getElementById('status').innerHTML = "Sending...";
-        formData = {
-            'name': $('input[name=name]').val(),
-            'email': $('input[name=email]').val(),
-            'subject': $('input[name=subject]').val(),
-            'interest': $('select[name=interest]').val(),
-            'pitfall': $('textarea[name=pitfall]').val(),
-            'message': $('textarea[name=message]').val()
-        };
-        $.ajax({
-            url: "mail.php",
-            type: "POST",
-            dataType: 'json',
-            data: formData,
-            success: function(data) {
-                $('#status').text(data.message);
-                if (data.code) //If mail was sent successfully, reset the form.
-                    $('#contact-form').closest('form').find("input[type=text], textarea").val("");
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $('#status').text("Hmm.. This is embarrassing. Something has gone wrong. Please use the displayed email instead.");
-            }
         });
-        return false; 
-    }
-    </script>
+        </script>
+        <script>
+        // EMAIL VALIDATE & AJAX test
+        function validateForm() {
+
+            document.getElementById('status').innerHTML = "Sending...";
+            formData = {
+                'name': $('input[name=name]').val(),
+                'email': $('input[name=email]').val(),
+                'subject': $('input[name=subject]').val(),
+                'interest': $('select[name=interest]').val(),
+                'pitfall': $('textarea[name=pitfall]').val(),
+                'message': $('textarea[name=message]').val()
+            };
+            $.ajax({
+                url: "mail.php",
+                type: "POST",
+                dataType: 'json',
+                data: formData,
+                success: function(data) {
+                    $('#status').text(data.message);
+                    if (data.code) //If mail was sent successfully, reset the form.
+                        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    $('#status').text("Hmm.. This is embarrassing. Something has gone wrong. Please use the displayed email instead.");
+                }
+            });
+            $.ajaxComplete(function() {
+                // Something to execute after AJAX.
+            });
+            return false;
+        }
+        </script>
 
         <script>
         // IMPORT EMAIL SEND BUTTON
@@ -687,21 +728,19 @@
             $("#sendappear").load("send.txt");
         });
         </script>
-		
-		        <!-- masonry for pinterest columns -->
-		<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+        <!-- masonry for pinterest columns -->
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
             crossorigin="anonymous" async></script>
-		
-		<script>
-			var $grid = $('.masonary').imagesLoaded( function() {
-			  $grid.masonry({
-itemSelector: '.col-lg-6'
-			  }); 
-			});
 
-		
-		</script>
+        <script>
+        var $grid = $('#beachcontainer').imagesLoaded(function() {
+            $grid.masonry({
+                itemSelector: '.col-lg-6'
+            });
+        });
+        </script>
 
 
         <!-- MODEL VIEWER -->
@@ -711,7 +750,7 @@ itemSelector: '.col-lg-6'
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js"></script>
 
         <!-- masonry for pinterest columns -->
-		<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
             crossorigin="anonymous" async></script>
 

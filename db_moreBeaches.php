@@ -35,7 +35,7 @@
  if($connectToServer)
  {
 
-	$sql = "SELECT * FROM beaches ORDER BY shakas DESC limit 8";
+	$sql = "SELECT * FROM beaches ORDER BY shakas DESC LIMIT 8,50";
 
 	$result = mysqli_query($connectToServer, $sql);
 	
