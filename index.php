@@ -177,7 +177,7 @@
 
     <!-- START MAINLIKE -->
 
-    <div id="mainlike" class="bg-rich border-top border-bottom border-3 ">
+    <div id="mainlike" class="bg-rich border-top border-3 ">
         <div class="text-light">
             <div class="row gx-0">
                 <div class="mainlike-left col-6 bg-rich d-none d-sm-none d-md-block" style="position:relative">
@@ -204,6 +204,13 @@
         </div>
     </div>
 
+
+    <div id="bg-waves" >
+
+    </div>
+
+
+
     <!-- START BEACHES -->
     <div id="beaches">
         <div class="container">
@@ -216,7 +223,7 @@
                 <?php include "db_staticbeaches.php"?>
 
             </div>
-            <div class="row col-6 mx-auto bg-rich mb-4">
+            <div class="row col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mx-auto bg-rich mb-4">
                 <button id="morebeaches" type="submit" class="main-shakabutton btn btn-lg position-relative border-2 rounded-0">
                     <h5 class="text-rich d-inline pt-2 px-4">Load More Beaches</h5>
                 </button>
@@ -459,12 +466,13 @@
                 callback();
                 throttleTimer = false;
             }, time);
+
         }
+
 
         const logobounce = () => {
 
             //console.log("fired");
-
             scroll = parseInt($(window).scrollTop()); //current scroll position
 
             if (scroll > 0 && (atPageTop == true)) {
@@ -496,6 +504,7 @@
                     times: 3
                 })
                 atPageTop = true;
+
             }
 
         }
@@ -510,8 +519,6 @@
 
         // console.log(scroll);
         </script>
-
-
 
         <script type="module">
         //HANDLES CAMERA CHANGES - MODEL VIEWER
