@@ -61,34 +61,34 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbarID">
-        <nav id="nav-color" class="navbar fixed-top navbar-expand-sm navbar-dark border-bottom border-3">
+    <nav id="nav-color" class="navbar fixed-top navbar-expand-sm navbar-dark border-bottom border-3">
 
-            <a class="navbar-brand text-light" href="#">
-                <h4 id="nav-height" class="d-flex align-content-center flex-wrap"><span id="brandbox" class="align-middle pt-2 ps-4">YORKES<span class="text-orange">.</span>LIVE</span></h4>
-            </a>
-            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID" aria-controls="navbarID" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon "></span>
-            </button>
-            <div id="navbarID" class="collapse navbar-collapse">
-                <div class="navbar-nav" role="">
-                    <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#landing"><span class="align-middle">Map</span></a>
-                    <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#mainlike"><span class="align-middle">Beaches</span></a>
-                    <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#info"><span class="align-middle">Info</span></a>
-                    <a class="nav-link nav-item  nav-text-light ps-2" aria-current="page" href="#contact"><span class="align-middle">Contact</span></a>
-                </div>
-                <ul class="navbar-nav  ms-auto">
-                    <li class="nav-item d-flex">
-                        <a class="nav-link text-light " aria-current="page" href="#beaches">
-                            <h4><span id="coins" class="align-middle text-blue p-2 "><?php include "db_getCoins.php"?></span></h4>
-                        </a>
-                        <img id="" class="me-4" src="img/shakawhite.png" width="45px" height="45px" alt="Shaka Icon">
-                    </li>
-                </ul>
-
+        <a class="navbar-brand text-light" href="#">
+            <h4 id="nav-height" class="d-flex align-content-center flex-wrap"><span id="brandbox" class="align-middle pt-2 ps-4">YORKES<span class="text-orange">.</span>LIVE</span></h4>
+        </a>
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID" aria-controls="navbarID" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+        <div id="navbarID" class="collapse navbar-collapse">
+            <div class="navbar-nav" role="">
+                <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#landing"><span class="align-middle">Map</span></a>
+                <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#mainlike"><span class="align-middle">Beaches</span></a>
+                <a class="nav-link nav-item nav-text-light ps-2" aria-current="page" href="#info"><span class="align-middle">Info</span></a>
+                <a class="nav-link nav-item  nav-text-light ps-2" aria-current="page" href="#contact"><span class="align-middle">Contact</span></a>
             </div>
-        </nav>
-        <div id="navbumper" class="bg-rich" style="height: 120px"></div>
+            <ul class="navbar-nav  ms-auto">
+                <li class="nav-item d-flex">
+                    <a class="nav-link text-light " aria-current="page" href="#beaches">
+                        <h4><span id="coins" class="align-middle text-blue p-2 "><?php include "db_getCoins.php"?></span></h4>
+                    </a>
+                    <img id="" class="me-4" src="img/shakawhite.png" width="45px" height="45px" alt="Shaka Icon">
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div id="navbumper" class="bg-rich" style="height: 120px"></div>
     <div id="beachlander" class="bg-rich">
         <div class="text-light">
             <div class="row gx-0">
@@ -105,102 +105,220 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h5 class="h3 feed-your-soul py-2">What did you think of the interactive map?</h2>
-                    <p>this is a paragraph</p>
+                        <p>this is a paragraph</p>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <div id="bg-waves" >
+    <div id="bg-waves">
 
     </div>
 
     <div class="container">
         <div class="row ">
-            <div class="col-12 text-center border-3 border-rich bg-light">
-                <h3>tittrestle</h3>
-                <p>text goes here</p>
-
+            <div class="col-12">
+                <div class="col-12 text-center border-3 border-rich bg-light" style="border-color:black;">
+                    <h2>Beach Name</h3>
+                    <p>text goes here</p>
+                </div>
             </div>
+
+        </div>
+        <div class="row mt-4">
+            <div class="col-8 ms-0">
+                <div class="col-12 border-rich bg-light p-3" style="height: 300px; ">
+                    <h3 class="text-uppercase">blurb</h3>
+                    <p>text</p>
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="col-12 border-rich  bg-light text-center py-3" style="height: 300px; ">
+                    <h3>ICONS</h3>
+                    <p>2 wide</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row py-4">
+            <div class="col-6">
+                <div class="col-12 border-rich bg-light p-3">
+                    <h3 class="text-center  text-uppercase">Camping</h3>
+                    <ul>
+                        <li><a href="">Item 1</a></li>
+                        <li><a href="">Item 2</a></li>
+                        <li><a href="">Item 3</a></li>
+                        <li><a href="">Item 4</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="col-12 border-rich bg-light p-3">
+                    <h3 class="text-center text-uppercase">Accomidation</h3>
+                    <ul>
+                        <li><a href="">Item 1</a></li>
+                        <li><a href="">Item 2</a></li>
+                        <li><a href="">Item 3</a></li>
+                        <li><a href="">Item 4</a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+ <div class="col-12">
+                <h3 class="text-center">GALLERY</h3>
+            </div>
+        <div id="gallery" class="row " data-masonry='{"percentPosition": true }'  >
+           
+                <div class="col-4 mb-3 hoverexpand grid-item" >
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+                </div>
+                <div class="col-4 mb-3 hoverexpand grid-item">
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+                </div>
+                <div class="col-4 mb-3 hoverexpand grid-item">
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+                </div>
+                <div class="col-4 mb-3 hoverexpand grid-item">
+                    <img class="img-fluid"src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+                </div>
+                <div class="col-4 mb-3 hoverexpand grid-item">
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+                </div>
+                <div class="col-4 mb-3 hoverexpand grid-item">
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+                </div>
+                <div class="col-4 mb-3 hoverexpand grid-item">
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
+                </div>
+                <div class="col-4 mb-3 hoverexpand grid-item">
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
+                </div>
+                <div class="col-4 mb-3 hoverexpand grid-item">
+                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+                </div>
+
+        </div>
+        <div class="row py-4">
+            <div class="col-4">
+                <div class="col-12 text-center border-rich bg-light h-100">
+                    <h3>Instagram Feed</h3>
+                </div>
+            </div>
+            <div class="col-8">
+
+                <div class="col-12 text-center border-rich bg-light">
+                    <h3>Google Map</h3>
+                    <img src="" alt="" height="300px" width="400px" class="h-100 w-100 bg-secondary">
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="col-12 border-rich bg-light p-3">
+                    <h3 class="text-center">Similar Beaches</h3>
+                    <p class="text-center">If you liked this beach, you might also like these. </p>
+                    <ul>
+                        <li> 
+                            <a href="">Beach 1</a>
+                        </li>
+                        <li> 
+                            <a href="">Beach 1</a>
+                        </li>
+                        <li> 
+                            <a href="">Beach 1</a>
+                        </li>
+                    </ul>
+                    
+                   
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div style="height: 1000px;">
-        <!-- something to scroll -->
+    <div id="bg-wavesUD" class="p-0 m-0">
+
     </div>
 
-            <!-- FOOTER -->
-            <div id="footer" class="bg-rich text-light">
-            <footer class="text-center text-lg-start bg-teal charleston">
+    <!-- FOOTER -->
+    <div id="footer" class="bg-rich text-light mt-0">
+        <footer class="text-center text-lg-start bg-teal charleston">
 
-                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-orange">
-                    <div class="me-5 d-none d-lg-block">
-                        <span>Social networks might be something in the future.</span>
-                    </div>
-                    <div class="d-flex">
-                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook Coming Soon."><i class="fab fa-facebook-f fa-2xl" role="img"
-                                aria-label="Facebook link coming soon"></i></p>
-                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Google Coming Soon."><i class="fab fa-google fa-2xl" role="img"
-                                aria-label="Google link coming soon"></i></p>
-                        <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram Coming Soon."><i class="fab fa-instagram fa-2xl" role="img"
-                                aria-label="Instagram link coming soon"></i></p>
-                        <a class="me-4 text-blue fake-anchor" href="https://github.com/DaveWestbury" data-bs-placement="top" title="Github Link"><i class="fab fa-github fa-2xl" role="img"
-                                aria-label="Github coming soon"></i></a>
-                    </div>
-
-                </section>
-
-                <section class="">
-                    <div class="container text-center text-md-start mt-5">
-                        <div class="row">
-                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto text-center mb-4">
-                                <h4 class="text-uppercase">
-
-                                    YORKES<span class="text-orange">.</span>LIVE
-                                </h4>
-                                <p>
-                                    Thankyou for taking the time to look through this website and arrive at the end. I
-                                    appreciate you!
-                                </p>
-                            </div>
-
-                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                                <!-- Links -->
-                                <h5 class="text-uppercase fw-bold mb-4">
-                                    Info
-                                </h5>
-
-                                <a class="text-light" href="https://yorkepeninsula.com.au/surfing">Surf - YP Tourism</a><br>
-                                <a class="text-light" href="https://en.wikipedia.org/wiki/Shaka_sign">Wikipedia - Shaka Handsign</a>
-
-
-                            </div>
-
-                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">
-                                    Useful links
-                                </h6>
-                                <p>
-                                    <a href="#landing" class="text-light">Top</a><br>
-                                    <a href="privacy-policy-yorkes.pdf" class="text-light">Yorkes Live Privacy Policy</a><br>
-                                    <a href="https://policies.google.com/technologies/partner-sites?hl=en-GB&gl=uk" class="text-light">Google Analytics Privacy Policy</a>
-                                </p>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.09);">
-                    <a class="text-light" href="http://westburydigital.com.au">W E S T B U R Y . D I G I T A L</a>
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-orange">
+                <div class="me-5 d-none d-lg-block">
+                    <span>Social networks might be something in the future.</span>
+                </div>
+                <div class="d-flex">
+                    <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook Coming Soon."><i class="fab fa-facebook-f fa-2xl" role="img"
+                            aria-label="Facebook link coming soon"></i></p>
+                    <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Google Coming Soon."><i class="fab fa-google fa-2xl" role="img"
+                            aria-label="Google link coming soon"></i></p>
+                    <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram Coming Soon."><i class="fab fa-instagram fa-2xl" role="img"
+                            aria-label="Instagram link coming soon"></i></p>
+                    <a class="me-4 text-blue fake-anchor" href="https://github.com/DaveWestbury" data-bs-placement="top" title="Github Link"><i class="fab fa-github fa-2xl" role="img"
+                            aria-label="Github coming soon"></i></a>
                 </div>
 
-            </footer>
+            </section>
+
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto text-center mb-4">
+                            <h4 class="text-uppercase">
+
+                                YORKES<span class="text-orange">.</span>LIVE
+                            </h4>
+                            <p>
+                                Thankyou for taking the time to look through this website and arrive at the end. I
+                                appreciate you!
+                            </p>
+                        </div>
+
+                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                            <!-- Links -->
+                            <h5 class="text-uppercase fw-bold mb-4">
+                                Info
+                            </h5>
+
+                            <a class="text-light" href="https://yorkepeninsula.com.au/surfing">Surf - YP Tourism</a><br>
+                            <a class="text-light" href="https://en.wikipedia.org/wiki/Shaka_sign">Wikipedia - Shaka Handsign</a>
 
 
-        </div> <!--  END FOOTER -->
+                        </div>
+
+                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Useful links
+                            </h6>
+                            <p>
+                                <a href="#landing" class="text-light">Top</a><br>
+                                <a href="privacy-policy-yorkes.pdf" class="text-light">Yorkes Live Privacy Policy</a><br>
+                                <a href="https://policies.google.com/technologies/partner-sites?hl=en-GB&gl=uk" class="text-light">Google Analytics Privacy Policy</a>
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.09);">
+                <a class="text-light" href="http://westburydigital.com.au">W E S T B U R Y . D I G I T A L</a>
+            </div>
+
+        </footer>
+
+
+    </div> <!--  END FOOTER -->
 
 
 
@@ -262,9 +380,36 @@
     });
     </script>
 
+    <script>
+    // // init Masonry
+    // var $grid = $('.grid').masonry({
+    //     itemSelector: '.grid-item',
+    //     percentPosition: true,
+    //     columnWidth: '.grid-sizer'
+    // });
+    // // layout Masonry after each image loads
+    // $grid.imagesLoaded().progress(function() {
+    //     $grid.masonry();
+    // });
+    </script>
+
 
     <!-- JQUERY UI -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js"></script>
+
+    <!-- masonry for pinterest columns -->
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+        crossorigin="anonymous" async></script>
+
+        <script>
+        var $grid = $('#gallery').imagesLoaded(function() {
+            $grid.masonry({
+                itemSelector: '.grid-item'
+            });
+        });
+        </script>
+
 
     <script>
     //intialise tooltips (must be after min.js)

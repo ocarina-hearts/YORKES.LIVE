@@ -7,6 +7,7 @@ body {
  background-image: url("img/ripples.png");
  position: relative;
  background-color: #7599bd !important;
+ overflow-x: hidden;
 }
 
 :root {
@@ -88,9 +89,9 @@ a:hover {
 }
 .border-rich {
   border-color: #031926 !important;
+  border-style: solid;
 
 }
-
 
 
 #landing{
@@ -137,6 +138,18 @@ padding: 60px;
   background-image: url("./img/waves.svg");
   width: 100%;
   height: 100px; 
+  background-size: cover;
+  background-position: top;
+
+
+}
+
+#bg-wavesUD {
+  background-image: url("./img/wavesUD.svg");
+  width: 100%;
+  height: 100px; 
+  background-size: cover;
+  background-position: bottom;
 
 }
 
