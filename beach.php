@@ -89,160 +89,11 @@
         </div>
     </nav>
     <div id="navbumper" class="bg-rich" style="height: 120px"></div>
-    <div id="beachlander" class="bg-rich">
-        <div class="text-light">
-            <div class="row gx-0">
-                <div class="mainlike-left col-6 bg-rich " style="position:relative">
-                    <p class="display-4 text-center feed-your-soul ps-4">Beach Name</p>
-                    <div class="vr"></div>
-                    <p class="sideways-text lead h-100">Beach vibes <span class="squish">-----------------------</span></p>
-                </div>
-                <div class="mainlike-right col-12 col-md-6 bg-rich text-center">
-                    <img src="" alt="" class="bg-secondary" height="300px" width="400px">
-                    <h5 class="py-3">Some text</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h5 class="h3 feed-your-soul py-2">What did you think of the interactive map?</h2>
-                        <p>this is a paragraph</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- START OF PHP  -->
 
+        <?php include "db_singlebeach.php" ?>
 
-    <div id="bg-waves">
-
-    </div>
-
-    <div class="container">
-        <div class="row ">
-            <div class="col-12">
-                <div class="col-12 text-center border-3 border-rich bg-light" style="border-color:black;">
-                    <h2>Beach Name</h3>
-                    <p>text goes here</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="row mt-4">
-            <div class="col-8 ms-0">
-                <div class="col-12 border-rich bg-light p-3" style="height: 300px; ">
-                    <h3 class="text-uppercase">blurb</h3>
-                    <p>text</p>
-
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="col-12 border-rich  bg-light text-center py-3" style="height: 300px; ">
-                    <h3>ICONS</h3>
-                    <p>2 wide</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row py-4">
-            <div class="col-6">
-                <div class="col-12 border-rich bg-light p-3">
-                    <h3 class="text-center  text-uppercase">Camping</h3>
-                    <ul>
-                        <li><a href="">Item 1</a></li>
-                        <li><a href="">Item 2</a></li>
-                        <li><a href="">Item 3</a></li>
-                        <li><a href="">Item 4</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="col-12 border-rich bg-light p-3">
-                    <h3 class="text-center text-uppercase">Accomidation</h3>
-                    <ul>
-                        <li><a href="">Item 1</a></li>
-                        <li><a href="">Item 2</a></li>
-                        <li><a href="">Item 3</a></li>
-                        <li><a href="">Item 4</a></li>
-                    </ul>
-
-
-                </div>
-            </div>
-
-        </div>
-
-
- <div class="col-12">
-                <h3 class="text-center">GALLERY</h3>
-            </div>
-        <div id="gallery" class="row " data-masonry='{"percentPosition": true }'  >
-           
-                <div class="col-4 mb-3 hoverexpand grid-item" >
-                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
-                </div>
-                <div class="col-4 mb-3 hoverexpand grid-item">
-                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
-                </div>
-                <div class="col-4 mb-3 hoverexpand grid-item">
-                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
-                </div>
-                <div class="col-4 mb-3 hoverexpand grid-item">
-                    <img class="img-fluid"src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
-                </div>
-                <div class="col-4 mb-3 hoverexpand grid-item">
-                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
-                </div>
-                <div class="col-4 mb-3 hoverexpand grid-item">
-                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
-                </div>
-                <div class="col-4 mb-3 hoverexpand grid-item">
-                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
-                </div>
-                <div class="col-4 mb-3 hoverexpand grid-item">
-                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
-                </div>
-                <div class="col-4 mb-3 hoverexpand grid-item">
-                    <img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
-                </div>
-
-        </div>
-        <div class="row py-4">
-            <div class="col-4">
-                <div class="col-12 text-center border-rich bg-light h-100">
-                    <h3>Instagram Feed</h3>
-                </div>
-            </div>
-            <div class="col-8">
-
-                <div class="col-12 text-center border-rich bg-light">
-                    <h3>Google Map</h3>
-                    <img src="" alt="" height="300px" width="400px" class="h-100 w-100 bg-secondary">
-                </div>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="col-12 border-rich bg-light p-3">
-                    <h3 class="text-center">Similar Beaches</h3>
-                    <p class="text-center">If you liked this beach, you might also like these. </p>
-                    <ul>
-                        <li> 
-                            <a href="">Beach 1</a>
-                        </li>
-                        <li> 
-                            <a href="">Beach 1</a>
-                        </li>
-                        <li> 
-                            <a href="">Beach 1</a>
-                        </li>
-                    </ul>
-                    
-                   
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <!-- END OF PHP -->
 
     <div id="bg-wavesUD" class="p-0 m-0">
 
@@ -402,13 +253,13 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
         crossorigin="anonymous" async></script>
 
-        <script>
-        var $grid = $('#gallery').imagesLoaded(function() {
-            $grid.masonry({
-                itemSelector: '.grid-item'
-            });
+    <script>
+    var $grid = $('#gallery').imagesLoaded(function() {
+        $grid.masonry({
+            itemSelector: '.grid-item'
         });
-        </script>
+    });
+    </script>
 
 
     <script>
