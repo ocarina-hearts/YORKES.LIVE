@@ -5,12 +5,9 @@ require"db_connect.php";
 if($connectToServer)
 {
 
-    $url = filter_var("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", FILTER_SANITIZE_URL) ;
-
+    $url = filter_var("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", FILTER_SANITIZE_URL);
     $url_components = parse_url($url);
-  
     parse_str($url_components['query'], $params);
-      
     $cleanParam = preg_replace("/[^a-zA-Z0-9]+/", "", $params['location']);
 
 
@@ -97,15 +94,15 @@ if($connectToServer)
            <div class='row my-3'>
                <div class='col-md-8'>
                    <div class='col-12 border-rich p-3 bg-light h-100'>
-                       <h3 class='text-uppercase'>More information about " . $row["spelt_name"] . "</h3>
-                       <p>" . $row['write_up'] . "</p>
-                       <h3 class='text-uppercase'>History about " . $row["spelt_name"] . "</h3>
+                       <h3 class='text-uppercase py-3'>More information about " . $row["spelt_name"] . "</h3>
+                       <p>" . $row['big_write_up'] . "</p>
+                       <h3 class='text-uppercase py-3'>History about " . $row["spelt_name"] . "</h3>
                        <p>" . $row['history'] . "</p>
                      
                    </div>
                </div>
                <div class='col-md-4'>
-                    <div class='col-12  h-100'>
+                    <div class='col-12'>
                         <div class='col-12'>
                             <div class='row text-center py-3 '>
                                     " . $iconsOutput . "
@@ -114,6 +111,10 @@ if($connectToServer)
                         <div class='col-12 border-rich bg-light text-center p-3'>
                             <h3 class='text-uppercase'>Alternate names for " . $row["spelt_name"] . "</h3>
                             <p>" . $row['alt_names'] . "</p>
+                        </div>
+                        <div class='col-12 bg-light border-rich p-3 mt-3'>
+                            <h3 class='text-center text-uppercase'>Surf</h3>
+                            <p>" . $row["surf"] . "</p>
                         </div>
                     </div>
                     
@@ -142,12 +143,7 @@ if($connectToServer)
                    </div>
                </div>
            </div>
-           <div class='col-12'>
-               <div class='col-12 bg-light border-rich p-3'>
-                   <h3 class='text-center text-uppercase'>Surf</h3>
-                   <p>" . $row["surf"] . "</p>
-               </div>
-           </div>
+           
         </div>
         <div class='container-fluid'>
            <div class='col-12'>
@@ -207,7 +203,7 @@ if($connectToServer)
         <div class='container'>
            <div class='row py-4'>
                <div class='col-md-4 mb-3 order-md-first order-last'>
-                   <div class='col-12 text-center border-rich bg-light h-100 py-3'>
+                   <div class='col-12 text-center border-rich bg-light h-100 py-3' style='min-height: 600px;'>
                        <h3 class='text-uppercase'>Instagram Posts</h3>
                        " . $row["instagram"] . "
                        <small class='feed-your-soul py-2 text-center'><a href='http://yorkes.live/contact'>Submit</a> your instgram posts to this section.</small>
@@ -215,9 +211,12 @@ if($connectToServer)
                    </div>
                </div>
                <div class='col-md-8 mb-3 '>
-                   <div class='col-12 text-center border-rich bg-light py-3'>
-                       <h3 class='text-uppercase'>Google Map</h3>
-                       <img src='' alt='' height='300px' width='400px' class='h-100 w-100 bg-secondary'>
+                   <div class='col-12 text-center border-rich bg-light p-0 h-100'>
+                   
+                       
+                       " . $row["googlemap"] . "
+                       
+                       
                    </div>
                </div>
            </div>
