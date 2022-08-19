@@ -22,60 +22,119 @@ if($connectToServer)
 		// output data of each row
 		while($row = mysqli_fetch_assoc($result)) {
 
-            	//handles icons
-	$iconsArray = explode(",", $row["icons"]);
-	$iconsOutput = ""; 
+            //handles icons
+	        $iconsArray = explode(",", $row["icons"]);
+	        $iconsOutput = ""; 
 	
-	for ($i = 0; $i <= count($iconsArray); $i++) {
-		
-		if ($iconsArray[$i] == "swimming") {
+            for ($i = 0; $i <= count($iconsArray); $i++) {
+                
+                if ($iconsArray[$i] == "swimming") {
 
-			$iconsOutput .= "<div class='col-6'><i class='fa-solid fa-person-swimming display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Swimming Beach' role='img' aria-label='Swimming Beach'></i><p>Swimming Beach</p></div> ";
+                    $iconsOutput .= "<div class='col-6'><i class='fa-solid fa-person-swimming display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Swimming Beach' role='img' aria-label='Swimming Beach'></i><p>Swimming Beach</p></div> ";
 
-		} elseif ($iconsArray[$i] == "fishing") {
+                } elseif ($iconsArray[$i] == "fishing") {
 
-			$iconsOutput .= "<div class='col-6'><i class='fa-solid fa-fish display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Fishing Beach' role='img' aria-label='Fishing Beach'></i><p>Fishing Beach</p></div>";
+                    $iconsOutput .= "<div class='col-6'><i class='fa-solid fa-fish display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Fishing Beach' role='img' aria-label='Fishing Beach'></i><p>Fishing Beach</p></div>";
 
-		} elseif ($iconsArray[$i] == "caravan") {
+                } elseif ($iconsArray[$i] == "caravan") {
 
-			$iconsOutput .= "<div class='col-6'><i class='fa-solid fa-caravan display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Campground' role='img' aria-label='Campground'></i><p>Campgrounds Close</p></div>";
+                    $iconsOutput .= "<div class='col-6'><i class='fa-solid fa-caravan display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Campground' role='img' aria-label='Campground'></i><p>Campgrounds Close</p></div>";
 
-		} elseif ($iconsArray[$i] == "toilets") {
+                } elseif ($iconsArray[$i] == "toilets") {
 
-			$iconsOutput .= "<div class='col-6'><i class='fa-solid fa-restroom display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Toilets' role='img' aria-label='Toilets'></i><p>Toilets Avaliable</p></div>";
+                    $iconsOutput .= "<div class='col-6'><i class='fa-solid fa-restroom display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Toilets' role='img' aria-label='Toilets'></i><p>Toilets Avaliable</p></div>";
 
-		} elseif ($iconsArray[$i] == "lookout") {
+                } elseif ($iconsArray[$i] == "lookout") {
 
-			$iconsOutput .= "<div class='col-6'><i class='fa-solid fa-binoculars display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Lookout / Photographic' role='img' aria-label='Lookout / Photographic'></i><p>Lookout/Photographic</p></div>";
+                    $iconsOutput .= "<div class='col-6'><i class='fa-solid fa-binoculars display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Lookout / Photographic' role='img' aria-label='Lookout / Photographic'></i><p>Lookout/Photographic</p></div>";
 
-		} elseif ($iconsArray[$i] == "warning") {
+                } elseif ($iconsArray[$i] == "warning") {
 
-			$iconsOutput .= "<div class='col-6'><i class='fa-solid fa-triangle-exclamation display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Dangerous Beach' role='img' aria-label='Dangerous Beach'></i><p>Dangerous Beach</p></div>";
+                    $iconsOutput .= "<div class='col-6'><i class='fa-solid fa-triangle-exclamation display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Dangerous Beach' role='img' aria-label='Dangerous Beach'></i><p>Dangerous Beach</p></div>";
 
-		} elseif ($iconsArray[$i] == "vehicle") {
+                } elseif ($iconsArray[$i] == "vehicle") {
 
-			$iconsOutput .= "<div class='col-6'><i class='fa-solid fa-truck-monster display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Vehicle Access'  role='img' aria-label='Vehicle Access'></i><p>4WD Access</p></div>";
+                    $iconsOutput .= "<div class='col-6'><i class='fa-solid fa-truck-monster display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Vehicle Access'  role='img' aria-label='Vehicle Access'></i><p>4WD Access</p></div>";
 
-		} elseif ($iconsArray[$i] == "surf") {
+                } elseif ($iconsArray[$i] == "surf") {
 
-			$iconsOutput .= "<div class='col-6'><i class='fa-solid fa-water display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Surf' role='img' aria-label='Surf'></i><p>Surf Beach</p></div>";
-		}		
-	}
+                    $iconsOutput .= "<div class='col-6'><i class='fa-solid fa-water display-5' data-bs-toggle='tooltip' data-bs-placement='top' title='Surf' role='img' aria-label='Surf'></i><p>Surf Beach</p></div>";
+                }		
+            }
+
+            //handles gallery - vars it into big string below. 
+	        $galleryArray = explode(",", $row["gallery"]);
+            $linkArray = explode(",", $row["gallery_link"]);
+	        $galleryOutput = ""; 
+            $extraText = "";
+
+            if (count($galleryArray) === 1) {
+                $extraText = "We dont have any images for this beach.<br>"; 
+            }
+            else {
+
+            for ($i = 0; $i < count($galleryArray); $i++) {
+
+                if ($linkArray[$i] != "nul"){
+                    $moneySymbol = "<i class='fa-solid fa-tag overflow-hidden' style='position:absolute; bottom:-5px; right:0px; font-size: 33px; color: #98DB4C;'></i>";
+                    $link = "<a href='" . $linkArray[$i] . "'>This image can be brought as a print here. - " . $linkArray[$i] . "</a>";
+
+                } else {
+                    $moneySymbol = "";
+                    $link = "<p>This image isn't for purchase. </p>";
+                }
+
+                $galleryOutput .= 
+                
+                "<div class='col-6 col-md-4 mb-3  grid-item'>
+                                    <a type='button' data-bs-toggle='modal' data-bs-target='#Modal-" . $galleryArray[$i]. "'>
+                                        <div class='hoverexpand'>
+                                            <picture>
+                                                "//<source srcset='./gallery/". $row["name"] . "/" . $galleryArray[$i]. ".webp'>
+                                                ."<img class='img-fluid' src='./gallery/". $row["name"] . "/" . $galleryArray[$i]. ".jpg' alt='Image of " . $row["spelt_name"] . " '>
+                                            </picture>
+                                            " . $moneySymbol . "
+                                        </div>
+                                    </a>
+                                    <div class='modal fade' id='Modal-" . $galleryArray[$i]. "' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                                        <div class='modal-dialog modal-xl'>
+                                            <div class='modal-content'>
+                                                <div class='modal-header'>
+                                                    <h5 class='modal-title' id='exampleModalLabel'>" . $row["spelt_name"] . "</h5>
+                                                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                                </div>
+                                                <div class='modal-body '>
+                                                    <picture>
+                                                        "//<source srcset='./gallery/". $row["name"] . "/" . $galleryArray[$i]. ".webp'>
+                                                        ."<img class='img-fluid' src='./gallery/". $row["name"] . "/" . $galleryArray[$i]. ".jpg' alt='Image of " . $row["spelt_name"]. " '>
+                                                    </picture>
+                                                </div>
+                                                <div class='modal-footer text-center'>
+                                                    " . $link . "
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>";
+
+            }
+        }
 
 
            echo "    <div id='beachlander' class='bg-rich'>
            <div class='text-light'>
                <div class='row gx-0'>
-                   <div class='mainlike-left col-6 bg-rich ' style='position:relative'>
+                   <div class='mainlike-left col-6 bg-rich d-none d-sm-none d-md-block ' style='position:relative'>
                        <p class='display-4 text-center feed-your-soul ps-4'>" . $row['spelt_name'] . "</p>
                        <div class='vr'></div>
                        <p class='sideways-text lead h-100'>Beach vibes <span class='squish'>-----------------------</span></p>
                    </div>
-                   <div class='mainlike-right col-12 col-md-6 bg-rich text-center'>
-                        <div class='' style='height: 350px; max-width: 500px; overflow: hidden;'>
+                   <div class='mainlike-right col-md-6 bg-rich text-center'>
+                        <p class='display-4 text-center feed-your-soul ps-4 d-md-none'>" . $row['spelt_name'] . "</p>
+                        <div class='overflow-hidden'>
                             <picture>
                                 <source srcset='./img/big/" . $row["name"]. ".webp'>
-                                <img src='./img/big/" . $row["title_image"]. "' class='' width='500px' height='auto' alt='Image of " . $row["spelt_name"]. " '>
+                                <img src='./img/big/" . $row["title_image"]. "' class='img-fluid' style='max-width: 400px;' alt='Image of " . $row["spelt_name"]. " '>
                             </picture>
                         </div>
                    </div>
@@ -113,7 +172,7 @@ if($connectToServer)
                             <p>" . $row['alt_names'] . "</p>
                         </div>
                         <div class='col-12 bg-light border-rich p-3 mt-3'>
-                            <h3 class='text-center text-uppercase'>Surf</h3>
+                            <h3 class='text-center text-uppercase'>Surf Report</h3>
                             <p>" . $row["surf"] . "</p>
                         </div>
                     </div>
@@ -125,7 +184,7 @@ if($connectToServer)
          
 
            <div class='row my-3'>
-               <div class='col-6'>
+               <div class='col-md-6'>
                    <div class='col-12 border-rich bg-light p-3 h-100'>
                        <h3 class='text-center  text-uppercase'>Camping near " . $row["spelt_name"] . "</h3>
 
@@ -134,7 +193,7 @@ if($connectToServer)
                        </ul>
                    </div>
                </div>
-               <div class='col-6'>
+               <div class='col-md-6'>
                    <div class='col-12 border-rich bg-light p-3 h-100'>
                        <h3 class='text-center text-uppercase'>Accomidation near " . $row["spelt_name"] . "</h3>
                        <ul>
@@ -150,6 +209,9 @@ if($connectToServer)
                <h3 class='text-center my-3 text-uppercase'>Image Gallery of " . $row["spelt_name"] . "</h3>
            </div>
            <div id='gallery' class='row' data-masonry='{'percentPosition': true }'>
+
+                " . $galleryOutput . 
+                "<!--
                <div class='col-4 mb-3  grid-item'>
                    <a type='button' data-bs-toggle='modal' data-bs-target='#exampleModal'>
                        <div class='hoverexpand'>
@@ -193,12 +255,12 @@ if($connectToServer)
                </div>
                <div class='col-4 mb-3 hoverexpand grid-item'>
                    <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg' />
-               </div>
-               <div class='col-4 mb-3 hoverexpand grid-item'>
-                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg' />
+               </div> -->
+               
+                   
                </div>
            </div>
-           <h5 class='h3 feed-your-soul py-2 text-center'>Have you taken a photo you would love to <a href='http://yorkes.live/contact'>submit?</a></h5>
+           <h5 class='h3 feed-your-soul py-2 text-center'>" . $extraText . "Have you taken a photo you would love to <a href='http://yorkes.live/contact'>submit?</a></h5>
         </div>
         <div class='container'>
            <div class='row py-4'>
