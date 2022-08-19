@@ -371,7 +371,20 @@ padding: 60px;
   filter: invert(72%) sepia(6%) saturate(3753%) hue-rotate(332deg) brightness(91%) contrast(88%) !important;
 }
 
+.defaultbutton {
+  transition: color 2s;
+  border-width: 10px;
+  border-color: #DC946A !important;
+  background-color: #DC946A !important;
+}
 
+.defaultbutton:hover {
+  background-color: #031926 !important;
+  color: #DC946A !important;
+}
+.defaultbutton:hover p{
+  color: #DC946A !important;
+}
 
 
 .shakabutton {
