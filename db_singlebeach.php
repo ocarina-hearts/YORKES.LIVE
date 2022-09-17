@@ -191,7 +191,7 @@ if($connectToServer)
                </div>
                <div class='col-md-6 my-2'>
                    <div class='col-12 border-rich bg-light p-3 h-100'>
-                       <h3 class='text-center text-uppercase'>Accomidation near " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
+                       <h3 class='text-center text-uppercase'>Accommodation near " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
                        <ul>
                             " . $row["accommodation"] . "
                        </ul>
