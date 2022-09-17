@@ -68,7 +68,7 @@ if($connectToServer)
 	        $galleryOutput = ""; 
             $extraText = "";
 
-            if (count($galleryArray) === 1) {
+            if (count($galleryArray) === 0) {
                 $extraText = "We dont have any images for this beach.<br>"; 
             }
             else {
@@ -120,7 +120,6 @@ if($connectToServer)
             }
         }
 
-
            echo "    <div id='beachlander' class='bg-rich'>
            <div class='text-light'>
                <div class='row gx-0'>
@@ -141,7 +140,7 @@ if($connectToServer)
                </div>
                <div class='row'>
                    <div class='col-12 text-center'>
-                       <h5 class='h3 feed-your-soul py-2'>Where the sky touches the sea. </h5>
+                       <h5 class='h3 feed-your-soul py-2'>Where the sky touches the sea<span class='text-orange'>.</span> </h5>
                    </div>
                </div>
            </div>
@@ -153,9 +152,9 @@ if($connectToServer)
            <div class='row my-3'>
                <div class='col-md-8'>
                    <div class='col-12 border-rich p-3 bg-light h-100'>
-                       <h3 class='text-uppercase py-3'>More information about " . $row["spelt_name"] . "</h3>
+                       <h3 class='text-uppercase py-3'>More information about " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
                        <p>" . $row['big_write_up'] . "</p>
-                       <h3 class='text-uppercase py-3'>History about " . $row["spelt_name"] . "</h3>
+                       <h3 class='text-uppercase py-3'>History about " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
                        <p>" . $row['history'] . "</p>
                      
                    </div>
@@ -168,34 +167,31 @@ if($connectToServer)
                             </div>
                         </div>
                         <div class='col-12 border-rich bg-light text-center p-3'>
-                            <h3 class='text-uppercase'>Alternate names for " . $row["spelt_name"] . "</h3>
+                            <h3 class='text-uppercase'>Alternate names for " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
                             <p>" . $row['alt_names'] . "</p>
                         </div>
                         <div class='col-12 bg-light border-rich p-3 mt-3'>
-                            <h3 class='text-center text-uppercase'>Surf Report</h3>
+                            <h3 class='text-center text-uppercase'>Surf Report<span class='text-orange'>.</span></h3>
                             <p>" . $row["surf"] . "</p>
                         </div>
-                    </div>
-                    
-                        
+                    </div>                       
                 </div>
            </div> 
-
          
 
-           <div class='row my-3'>
-               <div class='col-md-6'>
+           <div class='row '>
+               <div class='col-md-6 my-2'>
                    <div class='col-12 border-rich bg-light p-3 h-100'>
-                       <h3 class='text-center  text-uppercase'>Camping near " . $row["spelt_name"] . "</h3>
+                       <h3 class='text-center  text-uppercase'>Camping near " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
 
                        <ul>
                             " . $row["camping"] . "
                        </ul>
                    </div>
                </div>
-               <div class='col-md-6'>
+               <div class='col-md-6 my-2'>
                    <div class='col-12 border-rich bg-light p-3 h-100'>
-                       <h3 class='text-center text-uppercase'>Accomidation near " . $row["spelt_name"] . "</h3>
+                       <h3 class='text-center text-uppercase'>Accomidation near " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
                        <ul>
                             " . $row["accommodation"] . "
                        </ul>
@@ -206,57 +202,11 @@ if($connectToServer)
         </div>
         <div class='container-fluid'>
            <div class='col-12'>
-               <h3 class='text-center my-3 text-uppercase'>Image Gallery of " . $row["spelt_name"] . "</h3>
+               <h3 class='text-center my-3 text-uppercase'>Image Gallery of " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
            </div>
            <div id='gallery' class='row' data-masonry='{'percentPosition': true }'>
 
-                " . $galleryOutput . 
-                "<!--
-               <div class='col-4 mb-3  grid-item'>
-                   <a type='button' data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                       <div class='hoverexpand'>
-                           <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg' />
-                       </div>
-                   </a>
-                   <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-                       <div class='modal-dialog'>
-                           <div class='modal-content'>
-                               <div class='modal-header'>
-                                   <h5 class='modal-title' id='exampleModalLabel'>Modal title</h5>
-                                   <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-                               </div>
-                               <div class='modal-body '>
-                                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg'>
-                               </div>
-                               <div class='modal-footer text-center'>
-                                   <a href=''>This image can be brought as a print here</a>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class='col-4 mb-3 hoverexpand grid-item'>
-                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg' />
-               </div>
-               <div class='col-4 mb-3 hoverexpand grid-item'>
-                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg' />
-               </div>
-               <div class='col-4 mb-3 hoverexpand grid-item'>
-                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg' />
-               </div>
-               <div class='col-4 mb-3 hoverexpand grid-item'>
-                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg' />
-               </div>
-               <div class='col-4 mb-3 hoverexpand grid-item'>
-                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg' />
-               </div>
-               <div class='col-4 mb-3 hoverexpand grid-item'>
-                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg' />
-               </div>
-               <div class='col-4 mb-3 hoverexpand grid-item'>
-                   <img class='img-fluid' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg' />
-               </div> -->
-               
+                " . $galleryOutput . "
                    
                </div>
            </div>
@@ -266,7 +216,7 @@ if($connectToServer)
            <div class='row py-4'>
                <div class='col-md-4 mb-3 order-md-first order-last'>
                    <div class='col-12 text-center border-rich bg-light h-100 py-3' style='min-height: 600px;'>
-                       <h3 class='text-uppercase'>Instagram Posts</h3>
+                       <h3 class='text-uppercase'>Instagram Posts<span class='text-orange'>.</span></h3>
                        " . $row["instagram"] . "
                        <small class='feed-your-soul py-2 text-center'><a href='http://yorkes.live/contact'>Submit</a> your instgram posts to this section.</small>
 
@@ -274,10 +224,8 @@ if($connectToServer)
                </div>
                <div class='col-md-8 mb-3 '>
                    <div class='col-12 text-center border-rich bg-light p-0 h-100'>
-                   
                        
                        " . $row["googlemap"] . "
-                       
                        
                    </div>
                </div>
@@ -285,7 +233,7 @@ if($connectToServer)
            <div class='row mb-4'>
                <div class='col-12'>
                    <div class='col-12 border-rich bg-light p-3'>
-                       <h3 class='text-center text-uppercase'>Similar Beaches</h3>
+                       <h3 class='text-center text-uppercase'>Similar Beaches<span class='text-orange'>.</span></h3>
                        <p class='text-center'>If you liked this beach, you might also like these. </p>
                        <ul>
                            <li>

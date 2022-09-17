@@ -120,7 +120,7 @@
                             <input class="form-check-input" type="checkbox" value="" id="lakes" onchange="valueChanged()" disabled>
                             <label class="form-check-label" for="lakes">Lakes (Coming Soon)</label>
                         </div>
-                        <p class="card-text"><small class="text-muted">Version 1.5</small></p>
+                        <p class="card-text"><small class="text-muted">Version 2.1</small></p>
                     </div>
 
 
