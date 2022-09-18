@@ -216,7 +216,7 @@
         <div class="container">
             <div class="row">
                 <h2 class="text-center pt-4">STATIC BEACH LIST<span class="text-orange">.</span></h2>
-                <h4 id="top8" class="text-center pb-4">Top 8</h2>
+                <h3 id="top8" class="text-center pb-4">Top 8</h3>
             </div>
             <div id="beachcontainer" class="row masonary" data-masonry='{"percentPosition": true }'>
 
