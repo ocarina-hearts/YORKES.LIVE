@@ -91,7 +91,7 @@
     <div id="navbumper" class="bg-rich" style="height: 120px"></div>
     <!-- START OF PHP  -->
 
-        <?php include "db_singlebeach.php" ?>
+    <?php include "db_singlebeach.php" ?>
 
     <!-- END OF PHP -->
 
@@ -132,6 +132,7 @@
                                 Thankyou for taking the time to look through this website and arrive at the end. I
                                 appreciate you!
                             </p>
+                            <img class="" src="./img/cobranding-ondark-mono.png" height='100px' alt="SA Great!">
                         </div>
 
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
@@ -163,7 +164,7 @@
             </section>
 
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.09);">
-                <a class="text-light" href="http://westburydigital.com.au">W E S T B U R Y . D I G I T A L</a>
+                <a class="text-light" style="  font-family: Arial, Helvetica, sans-serif;" href="http://westburydigital.com.au">W E S T B U R Y . D I G I T A L</a>
             </div>
 
         </footer>
