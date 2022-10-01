@@ -123,7 +123,7 @@ if($connectToServer)
            echo "    
            <title>YORKES.LIVE | " . $row['spelt_name'] .  " </title>
            <meta charset='UTF-8'>
-           <meta name='description' content='This is " . $row['spelt_name'] .  " on the sunny Yorke Peninsula. Come learn more about the beach and what it has to offer. Don't forget to vote for  " . $row['spelt_name'] .  " . '>
+           <meta name='description' content='This is " . $row['spelt_name'] .  " on the sunny Yorke Peninsula. Come learn more about the beach and what it has to offer. Don&apos;t forget to vote for  " . $row['spelt_name'] .  " . '>
            <meta name='keywords' content='yorkes " . $row['spelt_name'] .  " yorke peninsula beaches map best surf'>
            <meta name='author' content='Written by D.W. Hills, Length: 1 pages'>
            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
