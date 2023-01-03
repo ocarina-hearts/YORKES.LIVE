@@ -333,7 +333,50 @@ if($connectToServer)
 
 }
 } else {
-echo "<h3 class='p-4'>ERROR:</h3>
+echo "
+<title>YORKES.LIVE</title>
+<meta charset='UTF-8'>
+<meta name='description' content='Come learn more about these beaches and what they have to offer.'>
+<meta name='keywords' content='yorkes yorke peninsula beaches map best surf'>
+<meta name='author' content='Written by D.W. Hills, Length: 1 pages'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+<meta property='og:url' content='https://yorkes.live' />
+<meta property='og:type' content='website' />
+<meta property='og:title' content='Yorkes.Live' />
+<meta property='og:description' content='An interactive map of the Yorke Peninsula&apos;s best beaches. As voted on by you.' />
+<meta property='og:image' content='https://yorkes.live/fb.png' />
+
+<link type='text/css' href='./styles.css' rel='stylesheet' />
+
+<link rel='apple-touch-icon' sizes='180x180' href='./apple-touch-icon.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='./favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='./favicon-16x16.png'>
+<link rel='manifest' href='/site.webmanifest'>
+
+<!-- MODEL VIEWER -->
+<script type='module' src='https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js'></script>
+
+<!-- BOOTSTRAP CSSs -->
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC'
+    crossorigin='anonymous'>
+
+<!-- FONTAWESOME -->
+<link href='./fontawesome/css/fontawesome.css' rel='stylesheet'>
+<link href='./fontawesome/css/brands.css' rel='stylesheet'>
+<link href='./fontawesome/css/solid.css' rel='stylesheet'>
+
+<!-- JQUERY -->
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+
+
+<!-- BOOTSTRAP JS -->
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM'
+    crossorigin='anonymous'>
+</script>
+
+</head>
+<h3 class='p-4'>ERROR:</h3>
 <p class='ps-4'>There is something wrong with the URL or the database. <a href='./index.php'>Try this link.</a></p>";
 }
 
