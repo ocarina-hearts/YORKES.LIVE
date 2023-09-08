@@ -32,7 +32,7 @@
 
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-orange">
                 <div class="me-5 d-none d-lg-block">
-                    <span>Social networks might be something in the future.</span>
+                    <span>Social Social networks might be something in the future.</span>
                 </div>
                 <div class="d-flex">
                     <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook Coming Soon."><i class="fab fa-facebook-f fa-2xl" role="img"
