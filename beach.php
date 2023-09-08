@@ -24,13 +24,11 @@
 
     <!-- END OF PHP -->
 
-    <div id="bg-wavesUD" class="p-0 m-0">
-
-    </div>
 
     <!-- FOOTER -->
-    <div id="footer" class="bg-rich text-light mt-0">
-        <footer class="text-center text-lg-start bg-teal charleston">
+    <div id="footer" class="text-light mt-auto">
+    <div id="bg-wavesUD" class="p-0 m-0"></div>
+        <footer class="text-center text-lg-start bg-rich charleston">
 
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-orange">
                 <div class="me-5 d-none d-lg-block">
