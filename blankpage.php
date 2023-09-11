@@ -106,7 +106,7 @@
         <div class="row">
             <div class="col-12 ">
                 <h2>This is a Blank page where anything can be entered.</h2>
-                <h3>Testinmg a pull request ;espifjsdifjidfj</h3>
+                <h3>Header three</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit exercitationem dolorum culpa ipsum porro perspiciatis ut ipsam repellat qui quisquam dolor, voluptatibus
                     eligendi voluptatem, aliquam maiores, accusantium enim delectus. Odio.</p>
             </div>
