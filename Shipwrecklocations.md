@@ -36,7 +36,31 @@ Latitude 35° 10' 03.7" South Longitude 137° 37' 14.8" East
 
 ## THE HOUGOMONT
 
-Built in 1897 in Scotland, the Hougomont was a four-masted, 292ft long, steel hulled, barque sailing ship. In 1932, on its way from London to Port Lincoln, the Hougomont was caught in a storm and suffered serious damage. 18 slow days later, after refusing aid from other ships, the Hougomont finally arrived at the port of Semaphore. Repairs were deemed too expensive, and so the Hougomont was sold to the Waratah Gypsum Company, who then paid for a tug boat to tow it back to Stenhouse Bay Jetty. There explosives were used to sink the ship, to create a breakwater to protect ships laden with gypsum. The ship is now located in 9 metres of water, making the remaining pieces easily accessible to divers.
+Built in 1897 in Scotland, the Hougomont was a four-masted, 292ft long, steel hulled, barque sailing ship. In 1932, on its way from London to Port Lincoln, the Hougomont was caught in a storm and suffered serious damage. 18 slow days later, after refusing aid from other ships, the Hougomont finally arrived at the port of Semaphore. Repairs were deemed too expensive, and so the Hougomont was sold to the Waratah Gypsum Company, who then paid for a tug boat to tow it back to Stenhouse Bay Jetty. The owners of the Hougomont determined that the expense to repair the vessel was too great, the vessel was valued at about £1000 but repairs were costed at £2500, and a decision was made to scuttle it. After stripping the vessel of its fittings the Hougomont was towed to Stenhouse Bay on 8 January 1933 where it was positioned south-west of the jetty and sunk with explosives to provide a breakwater for vessels loading gypsum. There explosives were used to sink the ship, to create a breakwater to protect ships laden with gypsum. The ship is now located in 9 metres of water, making the remaining pieces easily accessible to divers.
+
+## SS. Marion 
+
+The schooner rigged, single screw steamer Marion was built in 1854 at Glasgow, Scotland and imported for the Hobart - Melbourne passenger trade. In 1857 it was sold to South Australian interests for the Port Adelaide - Port Lincoln trade. The Marion was the first vessel to operate a regular steam shipping service from Port Adelaide to the Spencer Gulf ports. The iron hulled vessel of 197 gross tons measured 114.2 feet (34.8m) in length, 19.6 feet (6.0m) breadth and 10 feet (3.0m) depth. 
+
+On 11 July 1862 the S.S. Marion was en-route from Adelaide to Wallaroo under the command of Captain Alexander McCoy. On board were 35 passengers and 15 crew. Visibility became hazy while the Marion's chief officer was at the helm and, after passing Troubridge Hill, he became unsure of his position. Unexpectedly, heavy surf threatened out of the gloom. The engine was ordered full astern but it was too late, the advancing swells lifted the vessel onto rocks at the east side of Cable Hut Bay, 5 kilometres west of Stenhouse Bay. 
+
+The passengers and crew were landed safely on the nearby beach. Anxious moments followed when a passing vessel, the S.S. Lubra, appeared not to notice the distress flag and fire lit by the castaways. When all seemed lost, the S.S. Lubra altered course and rescued the shipwrecked group. 
+
+The wreck of the S.S. Marion lies at the base of a cliff, in 2-7 metres of water, east of Chinamans Hat Island, and to the south-east of the car park at Cable Hut Bay. 
+
+Latitude 35° 17' 17.1" South Longitude 136° 55' 18.4" East 
+
+## Pareora
+
+At 4:00am on 18 September the Pareora, in heavy seas, struck rocks to the north of Althorpe Island near The Monument rock. The tremendous power of the waves quickly broke the vessel up, shearing off the stern section. Confusion ruled. Unable to release the lifeboats the men either jumped or were washed overboard. It was a terrifying struggle for survival. The crew of the cutter Zephyr which was sheltering nearby were alerted by the cries for help, and heroically rescued seven survivors in the dangerous conditions. The master and ten other members of the Pareora's crew were killed. A cross erected on Althorpe Island marks their graves. The subsequent Marine Board inquiry found the tragedy was caused by careless navigation.
+
+Latitude 35° 21' 50.3" South Longitude 136° 51' 22.6" East 
+
+## Willyama
+
+The schooner rigged, screw steamer Willyama was built in 1897 by William Dobson fr Co. in Newcastle on Tyne, England. At the time of loss it was owned by the Adelaide Steamship Co. The steel hulled vessel of 1713 gross tons measured 325.5 feet (99.2m) in length, 45.1 feet (13.7m) breadth and 21.0 feet (6.4m) depth. Mystery surrounds the Willyama-s striking of the reel near Marion Bay. The crew's collective silence appeared to indicate that they either agreed to protect the captain's integrity, or perhaps were threatened if anyone spoke against him. The Willyama was carrying a cargo of coal from Newcastle, NSW to Port Pirie. On the night of 1 3 April 1907 the vessel was several miles off course. In the hazy gloom the crew on watch had failed to notice the Althorpe Island lighthouse. When land was finally sighted at 3:30am, the men on watch were undecided on the next course of action. They summoned Captain Bevvley to the bridge, but it was too late. The vessel struck a reef and sank off Penguin Point in Marion Bay. There was no immediate danger to those on board and all were safely landed. 
+
+Latitude 35° 15" 09.7" South Longitude 136° 58' 38.9" East 
 
 
 
