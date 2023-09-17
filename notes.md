@@ -4,7 +4,7 @@
 - Expand beach/lighthouse/roads/town // Interactive map of the Yorke Peninsula?
 - Discussion forum for beaches, towns and walking trails perhaps?
 - Update blender file to reduce polygons and potentially reduce file size?
-- Research shipwreck locations
+- Research shipwreck locations. Kind of finished, need to update rest of locations. 
 
 
 ## Increase traffic ideas
