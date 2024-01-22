@@ -5,10 +5,8 @@ require"db_connect.php";
 if($connectToServer)
 {
 
-    $url = filter_var("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]", FILTER_SANITIZE_URL);
-    $url_components = parse_url($url);
-    parse_str($url_components['query'], $params);
-    $cleanParam = preg_replace("/[^a-zA-Z0-9]+/", "", $params['location']);
+    // Use $_GET to retrieve the 'location' parameter
+$cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_GET['location']) : '';
 
 
     //echo $cleanParam;
@@ -310,18 +308,18 @@ if($connectToServer)
                 <p class='text-center'>If you liked this beach, you might also like these. </p>
                 <ul>
                     <li>
-                        <a href='https://yorkes.live/beach.php?location=flahertys'><span class='fw-bold'>Flaherty's Beach</span> - Beautiful big open beach perfect for pulling up a chair
+                        <a href='https://yorkes.live/flahertys'><span class='fw-bold'>Flaherty's Beach</span> - Beautiful big open beach perfect for pulling up a chair
                             under your 4WD awning.</a>
                     </li>
                     <li>
-                        <a href='https://yorkes.live/beach.php?location=browns'><span class='fw-bold'>Brown's Beach</span> - Deep in Dhilba Guuranda-Innes National Park fantastic beach for
+                        <a href='https://yorkes.live/browns'><span class='fw-bold'>Brown's Beach</span> - Deep in Dhilba Guuranda-Innes National Park fantastic beach for
                             fishing and walking.</a>
                     </li>
                     <li>
-                        <a href='https://yorkes.live/beach.php?location=shell'><span class='fw-bold'>Shell Beach</span> - Grab the kids and check out Shell Beach perfect camping near by.</a>
+                        <a href='https://yorkes.live/shell'><span class='fw-bold'>Shell Beach</span> - Grab the kids and check out Shell Beach perfect camping near by.</a>
                     </li>
                     <li>
-                        <a href='https://yorkes.live/beach.php?location=troubridge'><span class='fw-bold'>Troubridge</span> - Keep out of the wind and maybe catch a wave.</a>
+                        <a href='https://yorkes.live/troubridge'><span class='fw-bold'>Troubridge</span> - Keep out of the wind and maybe catch a wave.</a>
                     </li>
                 </ul>
             </div>

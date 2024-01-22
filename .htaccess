@@ -1,5 +1,18 @@
-//Caching schema
+# Caching schema
 <FilesMatch "\.(webp|jpg|ttf|png|css|woff2)$">
-Header set Cache-Control "public, max-age=1928448000"
+    Header set Cache-Control "public, max-age=1928448000"
 </FilesMatch>
- 
+
+RewriteEngine On
+
+# Exclude existing files or directories from rewriting
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite /beach/flahertys to /beach.php?location=flahertys
+RewriteRule ^([^/]+)/?$ /beach.php?location=$1 [QSA,L]
+
+
+#beach redirects
+RewriteCond %{QUERY_STRING} ^location=(flahertys|parsons|burners|magazine|berry|gym|daly|shell|browns|dolphin|pondalowie|meehan|troubridge|vincent)$
+RewriteRule ^beach\.php$ /%1? [R=301,L]

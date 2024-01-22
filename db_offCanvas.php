@@ -121,7 +121,7 @@ function humanTiming ($time) //HUMAN TIME //HUMAN TIME     (blatantly stolen fro
 							" . $row["access"]. "
                         </p>
 						<p class='card-text'><small class='text-muted'>Last updated " . humanTiming($time) . " ago</small></p>
-						<a href='./beach.php?location=" . $row["name"]. "' class='defaultbutton btn btn-sm position-relative border-2 rounded-0'>
+						<a href='./" . $row["name"]. "' class='defaultbutton btn btn-sm position-relative border-2 rounded-0'>
 							<p class='text-rich d-inline pt-2 px-4'>See more about " . $row["spelt_name"]. ".</p>
 						</a>
                     </div>
