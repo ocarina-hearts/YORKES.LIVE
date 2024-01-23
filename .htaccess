@@ -1,8 +1,11 @@
-# Caching schema
-<FilesMatch "\.(webp|jpg|ttf|png|css|woff2)$">
-    Header set Cache-Control "public, max-age=1928448000"
-</FilesMatch>
+AddType application/x-httpd-php .php .html
 
+# Caching schema
+#<FilesMatch "\.(webp|jpg|ttf|png|css|woff2)$">
+#    Header set Cache-Control "public, max-age=1928448000"
+#</FilesMatch>
+
+Options +FollowSymLinks
 RewriteEngine On
 
 # Exclude existing files or directories from rewriting
