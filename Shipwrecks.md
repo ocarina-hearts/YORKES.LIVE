@@ -62,5 +62,35 @@ The schooner rigged, screw steamer Willyama was built in 1897 by William Dobson 
 
 Latitude 35° 15" 09.7" South Longitude 136° 58' 38.9" East 
 
+## Yatala Reef
 
+On the evening of 21 December 1981 the Yatala Reef was moored off Port Moorowie. It was on a voyage from Port Pirie to Port Adelaide to undergo repairs to its refrigeration system. A fire started in the engine room and despite the efforts of the four crew, it could not be controlled. Shortly after the crew abandoned the trawler, strong winds drove the flames forward and three explosions were heard. 
+The Yatala Reef sank about 1km from shore in approximately 11 metres of water. The wrecks runs almost parallel to the shore with the bow facing eastwards.
+
+Latitude 35° 07' 07.2" South
+
+Longitude 136° 29' 22.9" East
+
+## Althorpe Island Shipwrecks
+
+Apprximately 7km south-southwest of Cape Spencer likes Althorpe Island at the western entrance to Investigator Strait. The settlements of the Eyre Peninsula and the Yorke Peninsula led to an increase of coastal shipping to and from the Spencer Gulf in the 1860's. Minerals, wool and wheat were loaded and returned for shipment to Adelaide.
+Between 1878 - 1982 six vessles sunk around Althorpe Island.
+
+Young St George (1878)
+
+Welling (1892)
+
+Pareora (1919)
+
+Rapid (1937)
+
+Altair (1971)
+
+Mylor Star (1982)
+
+More history on Yorke Peninsula Shipwrecks visit:
+
+[Australian Register of Historic Vessels](https://www.sea.museum/collections/arhv)
+
+[Australian National Maratime Museum](https://www.sea.museum/)
 
