@@ -22,7 +22,7 @@
 
 
 
-    <title>YORKES.LIVE - Blank</title>
+    <title>YORKES.LIVE - In The Media</title>
     <meta charset='UTF-8'>
     <meta name='description' content='This is'>
     <meta name='keywords' content='yorkes'>
@@ -93,25 +93,61 @@
 
         </div>
     </nav>
-    <div id='navbumper' class='bg-rich p-0 m-o' style='height: 120px'></div>
-    <div class="text-light bg-rich pb-4 pt-4">
-        <h2 class="text-center">This is a Blank page where anything can be entered.</h2>
+
+    <div style="background-image: url('./gallery/browns/4.jpg'); background-size:cover; height: 600px;">
+
+    </div>
     </div>
 
 
+    <!-- TITLE -->
+    <div id="bg-wavesUD" class="p-0 m-0" style="margin-top: -80px !important; z-index: 10 !important;"></div>
+    <div class="bg-rich">
+        <p class="display-4 text-center feed-your-soul pb-2 text-white m-0">In The Media</p>
+    </div>
+    <div id='bg-waves' class="m-0 p-0" style="margin-top: -5px !important;"></div>
 
-    <div id='bg-waves'></div>
 
-    <div class="container" style="height: 1000px;">
+
+    <div class="container" style="min-height: 1000px;">
         <div class="row">
             <div class="col-12 ">
-                <h2>This is a Blank page where anything can be entered.</h2>
-                <h3>Header three</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit exercitationem dolorum culpa ipsum porro perspiciatis ut ipsam repellat qui quisquam dolor, voluptatibus
-                    eligendi voluptatem, aliquam maiores, accusantium enim delectus. Odio.</p>
+                <h1 class="mb-4">Some places YORKES LIVE has been featured in the media</h1>
+
+                <div id="beachcontainer" class="row masonary" data-masonry='{"percentPosition": true }'>
+
+                    <!-- Ezra -->
+                    <div class='col-lg-12'>
+                        <div class='card mb-4 border-3 border-rich'>
+                            <div class='row g-0'>
+                                <div class='col-12 ps-4'>
+                                    <h3 class='card-title me-auto align-middle text-uppercase pt-2 text-center display-6'>Ezra Magazine</h3>
+                                    <div class="row">
+                                        <div class="col-lg-4 pb-3">
+                                            <a href="https://ezramagazine.com/top5beachesontheyorkepeninsula/"><img class="img-fluid" src="./img/inmedia/ezra.jpg" alt="image of article"></a>
 
 
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class='pt-4'> In January 2024 YORKES.LIVE was featured in <a href="https://ezramagazine.com/top5beachesontheyorkepeninsula/">Ezra Magazine</a>.
+                                                The
+                                                article goes through 5 beaches on the Yorke Peninsula as voted on by you. A fantastic write up and absolutely worth the read. Thanks Ezra
+                                                Magazine!</p>
+                                            <p> <span class='fw-bold'>Location</span>
+                                                <br>- https://ezramagazine.com/top5beachesontheyorkepeninsula/
+                                            </p>
+                                        </div>
+                                    </div>
 
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </div>
     </div>

@@ -4,93 +4,101 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
 <url>
   <loc>https://yorkes.live/</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-28T12:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://yorkes.live/flahertys</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-01-28T12:00:00+00:00</lastmod>
+  <priority>0.95</priority>
+  <xhtml:link rel="canonical" href="https://yorkes.live/beach.php?location=flahertys" />
 </url>
 <url>
   <loc>https://yorkes.live/parsons</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-28T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/burners</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/magazine</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-01-28T12:00:00+00:00</lastmod>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://yorkes.live/berry</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/gym</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/daly</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/shell</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/browns</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://yorkes.live/dolphin</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/pondalowie</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/meehan</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/troubridge</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/vincent</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://yorkes.live/shipwrecks.php</loc>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
+  <priority>0.85</priority>
+</url>
+<url>
   <loc>https://yorkes.live/privacy-policy-yorkes.pdf</loc>
-  <lastmod>2022-06-18T05:14:51+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://yorkes.live/index.php</loc>
-  <lastmod>2022-10-01T12:59:19+00:00</lastmod>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://yorkes.live/inmedia.php</loc>
+  <lastmod>2024-01-26T12:00:00+00:00</lastmod>
+  <priority>0.50</priority>
 </url>
 
 
