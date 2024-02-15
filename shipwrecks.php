@@ -22,7 +22,7 @@
 
 
 
-    <title>YORKES.LIVE - Blank</title>
+    <title>YORKES.LIVE - Shipwrecks</title>
     <meta charset='UTF-8'>
     <meta name='description' content='This is'>
     <meta name='keywords' content='yorkes'>
@@ -95,19 +95,18 @@
     </nav>
 
     <!-- HEADER IMG -->
-    <div style="background-image: url('./gallery/browns/4.jpg'); background-size:cover;  height: 600px; position: relative; z-index: -1; ">
-        <p class="sideways-text lead h-100 " style="position: absolute; top: 100px; padding-top: -100px;  text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 10px black;"><a class="text-white" style="text-decoration: none;"href="./browns/">Browns Beach</a>  <span class="squish">-----------------------</span></p>
-    </div>
-
-
+    <div style="background-image: url('./gallery/browns/4.jpg'); background-position:center; background-size:cover; height: 600px; position: relative; z-index: -1; ">
+        <p class="sideways-text lead h-100" style="position: absolute; top: 100px; z-index: 1; text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 10px black;"><a class="text-white"
+                style="text-decoration: none;" href="./browns/">Browns Beach</a> <span class="squish">-----------------------</span></p>
     </div>
 
     <!-- TITLE -->
-    <div id="bg-wavesUD" class="p-0 m-0" style="margin-top: -80px !important; z-index: 10 !important;"></div>
+    <div id="bg-wavesUD" class="p-0 m-0" style="margin-top: -80px !important; z-index: 2 !important;"></div>
     <div class="bg-rich">
         <p class="display-4 text-center feed-your-soul pb-2 text-white m-0">Ship Wrecks</p>
     </div>
-    <div id='bg-waves' class="m-0 p-0" style="margin-top: -5px !important;"></div>
+    <div id='bg-waves' class="m-0 p-0" style="margin-top: -5px !important; z-index: 3 !important;"></div>
+
 
     <div class="container" style="min-height: 1000px;">
         <div class="row">

@@ -182,14 +182,47 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
         <ul class='navbar-nav  ms-auto'>
             <li class='nav-item d-flex'>
                 <a class='nav-link text-light ' aria-current='page' href='#beaches'>
-                    <h4><span id='coins' class='align-middle text-blue p-2 '><?php include 'db_getCoins.php'?></span></h4>
+                    <h4><span id='coins' class='align-middle text-blue p-2 '></span></h4>
 </a>
 <img id='' class='me-4' src='img/shakawhite.png' width='45px' height='45px' alt='Shaka Icon'>
 </li>
 </ul>
 
 </div>
-</nav>
+</nav>";
+
+
+
+
+//this script sees if there is a image called pano in the gallery folder. if not use the default image.
+$directory = 'gallery/'. $row["name"].'/';
+$imageName = 'pano.jpg';
+
+// Check if the image file exists
+$imagePath = $directory . $imageName;
+
+if (file_exists($imagePath)) {
+
+    echo "
+    <div style=\"background-image: url('./gallery/". $row["name"]."/pano.jpg'); background-position:center; background-size:cover; height: 500px !important; position: relative; z-index: -1;\">
+        <p class='sideways-text lead h-100' style='position: absolute; top: 100px; z-index: 1; text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 10px black;'>
+            <a class='text-white' style='text-decoration: none;' href='./browns/'>Panoramic</a> 
+            <span class='squish'>-----------------------</span>
+        </p>
+    </div>
+    
+    <div id='bg-wavesUD' class='p-0 m-0' style='margin-top: -80px !important; z-index: 2 !important;'></div>
+    <div class='bg-rich'>
+        <p class='display-4 text-center feed-your-soul pb-2 text-white m-0'>" . $row['spelt_name'] . "</p>
+    </div>
+    <div id='bg-waves' class='m-0 p-0' style='margin-top: -5px !important; z-index: 3 !important;'></div>
+    ";
+    
+
+
+} else {
+echo "
+<div id='navbumper' class='bg-rich' style='height: 120px'></div>
 <div id='navbumper' class='bg-rich' style='height: 120px'></div>
 <div id='beachlander' class='bg-rich'>
     <div class='text-light'>
@@ -217,8 +250,16 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
     </div>
 </div>
 
-<div id='bg-waves'></div>
+<div id='bg-waves'></div>";
 
+
+}
+
+
+
+
+
+echo "
 <div class='container'>
     <div class='row my-3'>
         <div class='col-md-8'>
@@ -374,40 +415,41 @@ echo "
 </script>
 
 </head>
+
 <body class='d-flex flex-column min-vh-100' data-bs-spy='scroll' data-bs-target='#navbarID'>
-<nav id='nav-color' class='navbar fixed-top navbar-expand-sm navbar-dark border-bottom border-3'>
+    <nav id='nav-color' class='navbar fixed-top navbar-expand-sm navbar-dark border-bottom border-3'>
 
-    <a class='navbar-brand text-light' href='./index.php'>
-        <h4 id='nav-height' class='d-flex align-content-center flex-wrap'><span id='brandbox' class='align-middle pt-2 ps-4'>YORKES<span class='text-orange'>.</span>LIVE</span></h4>
-    </a>
-    <button class='navbar-toggler text-light' type='button' data-bs-toggle='collapse' data-bs-target='#navbarID' aria-controls='navbarID' aria-expanded='false'
-        aria-label='Toggle navigation'>
-        <span class='navbar-toggler-icon '></span>
-    </button>
-    <div id='navbarID' class='collapse navbar-collapse'>
-        <div class='navbar-nav' role=''>
-            <a class='nav-link nav-item nav-text-light ps-2' aria-current='page' href='./index.php'><span class='align-middle'>Map</span></a>
-            <a class='nav-link nav-item nav-text-light ps-2' aria-current='page' href='./index.php#mainlike'><span class='align-middle'>Beaches</span></a>
-            <a class='nav-link nav-item nav-text-light ps-2' aria-current='page' href='./index.php#info'><span class='align-middle'>Info</span></a>
-            <a class='nav-link nav-item  nav-text-light ps-2' aria-current='page' href='.index.php#contact'><span class='align-middle'>Contact</span></a>
+        <a class='navbar-brand text-light' href='./index.php'>
+            <h4 id='nav-height' class='d-flex align-content-center flex-wrap'><span id='brandbox' class='align-middle pt-2 ps-4'>YORKES<span class='text-orange'>.</span>LIVE</span></h4>
+        </a>
+        <button class='navbar-toggler text-light' type='button' data-bs-toggle='collapse' data-bs-target='#navbarID' aria-controls='navbarID' aria-expanded='false'
+            aria-label='Toggle navigation'>
+            <span class='navbar-toggler-icon '></span>
+        </button>
+        <div id='navbarID' class='collapse navbar-collapse'>
+            <div class='navbar-nav' role=''>
+                <a class='nav-link nav-item nav-text-light ps-2' aria-current='page' href='./index.php'><span class='align-middle'>Map</span></a>
+                <a class='nav-link nav-item nav-text-light ps-2' aria-current='page' href='./index.php#mainlike'><span class='align-middle'>Beaches</span></a>
+                <a class='nav-link nav-item nav-text-light ps-2' aria-current='page' href='./index.php#info'><span class='align-middle'>Info</span></a>
+                <a class='nav-link nav-item  nav-text-light ps-2' aria-current='page' href='.index.php#contact'><span class='align-middle'>Contact</span></a>
+            </div>
+            <ul class='navbar-nav  ms-auto'>
+                <li class='nav-item d-flex'>
+                    <a class='nav-link text-light ' aria-current='page' href='#beaches'>
+                        <h4><span id='coins' class='align-middle text-blue p-2 '><?php include 'db_getCoins.php'?></span></h4>
+                    </a>
+                    <img id='' class='me-4' src='img/shakawhite.png' width='45px' height='45px' alt='Shaka Icon'>
+                </li>
+            </ul>
+
         </div>
-        <ul class='navbar-nav  ms-auto'>
-            <li class='nav-item d-flex'>
-                <a class='nav-link text-light ' aria-current='page' href='#beaches'>
-                    <h4><span id='coins' class='align-middle text-blue p-2 '><?php include 'db_getCoins.php'?></span></h4>
-</a>
-<img id='' class='me-4' src='img/shakawhite.png' width='45px' height='45px' alt='Shaka Icon'>
-</li>
-</ul>
+    </nav>
+    <div id='navbumper' class='bg-rich' style='height: 120px'></div>
+    <h3 class='p-4'>ERROR:</h3>
+    <p class='ps-4'>There is something wrong with the URL or the database. <a href='./index.php'>Try this link.</a></p>";
+    }
 
-</div>
-</nav>
-<div id='navbumper' class='bg-rich' style='height: 120px'></div>
-<h3 class='p-4'>ERROR:</h3>
-<p class='ps-4'>There is something wrong with the URL or the database. <a href='./index.php'>Try this link.</a></p>";
-}
+    mysqli_close($connectToServer);
+    }
 
-mysqli_close($connectToServer);
-}
-
-?>
+    ?>
