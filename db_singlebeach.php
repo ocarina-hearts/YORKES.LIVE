@@ -60,6 +60,43 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
                 }		
             }
 
+            //handles what3words locations and iframes/modals
+
+
+            $w3wnameArray = explode(",", $row["w3wname"]);
+            $w3wArray = explode(",", $row["w3w"]);
+
+            $w3woutput = "";
+            
+            if (empty($row["w3wname"]) || empty($row["w3w"])) {
+                $w3woutput = "This table is empty.";
+            } else {
+
+                for ($i = 0; $i < count($w3wArray); $i++) {
+            
+                $w3woutput .= "
+                                <p class='text-center'><b>" . $w3wnameArray[$i]. "</b><br>
+                                <a class='text-primary' type='button' data-bs-toggle='modal' data-bs-target='#modal-" . $i. "'>" . $w3wArray[$i]. "</a></p>
+                                <div class='modal fade' id='modal-" . $i. "' tabindex='-1' aria-labelledby='" . $w3wnameArray[$i]. "' aria-hidden='true'>
+                                    <div class='modal-dialog modal-xl'>
+                                        <div class='modal-content'>
+                                            <div class='modal-header'>
+                                                <h5 class='modal-title' id='exampleModalLabel'>" . $w3wnameArray[$i]. "</h5>
+                                                <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                            </div>
+                                            <div class='modal-body '>
+                                                        <iframe src='https://map.what3words.com/" . $w3wArray[$i]. "?utm_source=iframe' frameborder='0' style='border:0;width:100%;height:800px;'></iframe>
+                                            </div>
+                                            <div class='modal-footer text-center'>
+                                                <p>" . $w3wnameArray[$i]. "</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>";
+                }
+             }
+
+
             //handles gallery - vars it into big string below. 
 	        $galleryArray = explode(",", $row["gallery"]);
             $linkArray = explode(",", $row["gallery_link"]);
@@ -263,12 +300,12 @@ echo "
 <div class='container'>
     <div class='row my-3'>
         <div class='col-md-8'>
-            <div class='col-12 border-rich p-3 bg-light h-100'>
+            <div class='col-12 border-rich p-3 bg-light h-100 clearfix'>
                 <h3 class='text-uppercase py-3'>More information about " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
                 <p>" . $row['big_write_up'] . "</p>
                 <h3 class='text-uppercase py-3'>History about " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
                 <p>" . $row['history'] . "</p>
-
+                <small class='p-0 m-0 float-end'><a class='text-secondary' href='./index.php#contact' data-bs-toggle='tooltip' data-bs-placement='top' title='Take me to contact page.'>Not Correct? Something to add?</a></small>
             </div>
         </div>
         <div class='col-md-4'>
@@ -285,6 +322,15 @@ echo "
                 <div class='col-12 bg-light border-rich p-3 mt-3'>
                     <h3 class='text-center text-uppercase'>Surf Report<span class='text-orange'>.</span></h3>
                     <p>" . $row["surf"] . "</p>
+                </div>
+                <div class='col-12 bg-light border-rich p-3 mt-3 clearfix'>
+                    <h3 class='text-center text-uppercase'>What3Words Locations<span class='text-orange'>.</span></h3>
+                    <p class='text-center'>" . $w3woutput . "</p>
+                    <p>Beach Locations can be confusing, <a href='https://what3words.com/about'>What3Words</a> is the perfect way to show locations in a very simple but precise way.</p>
+                    <small class='p-0 m-0 float-end'><a class='text-secondary' href='./index.php#contact' data-bs-toggle='tooltip' data-bs-placement='top' title='Take me to contact page.'>Not Correct?</a></small>
+
+                
+                
                 </div>
             </div>
         </div>
@@ -437,19 +483,19 @@ echo "
                 <li class='nav-item d-flex'>
                     <a class='nav-link text-light ' aria-current='page' href='#beaches'>
                         <h4><span id='coins' class='align-middle text-blue p-2 '><?php include 'db_getCoins.php'?></span></h4>
-                    </a>
-                    <img id='' class='me-4' src='img/shakawhite.png' width='45px' height='45px' alt='Shaka Icon'>
-                </li>
-            </ul>
+</a>
+<img id='' class='me-4' src='img/shakawhite.png' width='45px' height='45px' alt='Shaka Icon'>
+</li>
+</ul>
 
-        </div>
-    </nav>
-    <div id='navbumper' class='bg-rich' style='height: 120px'></div>
-    <h3 class='p-4'>ERROR:</h3>
-    <p class='ps-4'>There is something wrong with the URL or the database. <a href='./index.php'>Try this link.</a></p>";
-    }
+</div>
+</nav>
+<div id='navbumper' class='bg-rich' style='height: 120px'></div>
+<h3 class='p-4'>ERROR:</h3>
+<p class='ps-4'>There is something wrong with the URL or the database. <a href='./index.php'>Try this link.</a></p>";
+}
 
-    mysqli_close($connectToServer);
-    }
+mysqli_close($connectToServer);
+}
 
-    ?>
+?>
