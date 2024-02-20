@@ -12,8 +12,8 @@
                             aria-label="Facebook link coming soon"></i></p>
                     <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Google Coming Soon."><i class="fab fa-google fa-2xl" role="img"
                             aria-label="Google link coming soon"></i></p>
-                    <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram Coming Soon."><i class="fab fa-instagram fa-2xl" role="img"
-                            aria-label="Instagram link coming soon"></i></p>
+                    <a class="me-4 text-blue fake-anchor" href="https://instagram.com/yorkes.live"data-bs-placement="top" title="Instagram link"><i class="fab fa-instagram fa-2xl" role="img"
+                            aria-label="Instagram link coming soon"></i></a>
                     <a class="me-4 text-blue fake-anchor" href="https://github.com/DaveWestbury" data-bs-placement="top" title="Github Link"><i class="fab fa-github fa-2xl" role="img"
                             aria-label="Github coming soon"></i></a>
                 </div>
