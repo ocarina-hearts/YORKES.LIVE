@@ -5,7 +5,7 @@
 
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-orange">
                 <div class="me-5 d-none d-lg-block">
-                    <span>Social networks might be something in the future.</span>
+                    <span>Checkout where else you can find us.</span>
                 </div>
                 <div class="d-flex">
                     <p class="me-4 text-blue fake-anchor" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook Coming Soon."><i class="fab fa-facebook-f fa-2xl" role="img"
@@ -43,7 +43,8 @@
 
                             <a class="text-light" href="https://yorkepeninsula.com.au/surfing">Surf - YP Tourism</a><br>
                             <a class="text-light" href="https://en.wikipedia.org/wiki/Shaka_sign">Wikipedia - Shaka Handsign</a><br>
-                            <a class="text-light" href="./inmedia.php">Yorkes Live in the Media</a>
+                            <a class="text-light" href="./inmedia.php">Yorkes Live in the Media</a><br>
+                            <a class="text-light" href="https://westburydigital.com.au/bugbounty.php">Responsible Disclosure</a>
 
 
                         </div>
