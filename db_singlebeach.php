@@ -2,6 +2,8 @@
 
 require"db_connect.php"; 
 
+
+
 if($connectToServer)
 {
 
@@ -19,6 +21,21 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
 	if (mysqli_num_rows($result) > 0) {
 		// output data of each row
 		while($row = mysqli_fetch_assoc($result)) {
+
+            //loads variables and sanitises output for XSS attack. 
+            $safeName = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
+            $safeSpeltName = $row['spelt_name'] ;//$row['spelt_name'] //htmlspecialchars($row['spelt_name'], ENT_QUOTES, 'UTF-8');
+            $safeBigWriteUp = $row['big_write_up']; //htmlspecialchars($row['big_write_up'], ENT_QUOTES, 'UTF-8');
+            $safeHistory =  $row['history'] ;//htmlspecialchars($row['history'], ENT_QUOTES, 'UTF-8');
+            $safeSurf = $row['surf']; //htmlspecialchars($row['surf'], ENT_QUOTES, 'UTF-8');
+            $safeCamping = $row['camping'] ;//htmlspecialchars($row['camping'], ENT_QUOTES, 'UTF-8');
+            $safeAltNames = $row['alt_names'] ;//htmlspecialchars($row['alt_names'], ENT_QUOTES, 'UTF-8');
+            $safeAccommodation = $row['accommodation']; //htmlspecialchars($row['accommodation'], ENT_QUOTES, 'UTF-8');
+            $safeTitleImage = $row["title_image"];
+
+            $safeInstagram = $row['instagram'];
+            $safeGoogleMaps = $row['googlemap'];
+
 
             //handles icons
 	        $iconsArray = explode(",", $row["icons"]);
@@ -60,11 +77,10 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
                 }		
             }
 
+
             //handles what3words locations and iframes/modals
-
-
-            $w3wnameArray = explode(",", $row["w3wname"]);
-            $w3wArray = explode(",", $row["w3w"]);
+            $w3wnameArray = explode(",", htmlspecialchars($row['w3wname'], ENT_QUOTES, 'UTF-8'));
+            $w3wArray = explode(",", htmlspecialchars($row['w3w'], ENT_QUOTES, 'UTF-8'));
 
             $w3woutput = "";
             
@@ -97,9 +113,13 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
              }
 
 
+
+
+
             //handles gallery - vars it into big string below. 
-	        $galleryArray = explode(",", $row["gallery"]);
-            $linkArray = explode(",", $row["gallery_link"]);
+            $galleryArray = explode(",", htmlspecialchars($row['gallery'], ENT_QUOTES, 'UTF-8'));
+            $linkArray = explode(",", htmlspecialchars($row['gallery_link'], ENT_QUOTES, 'UTF-8'));
+
 	        $galleryOutput = ""; 
             $extraText = "";
 
@@ -125,8 +145,7 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
                                     <a type='button' data-bs-toggle='modal' data-bs-target='#Modal-" . $galleryArray[$i]. "'>
                                         <div class='hoverexpand'>
                                             <picture>
-                                                "//<source srcset='./gallery/". $row["name"] . "/" . $galleryArray[$i]. ".webp'>
-                                                ."<img class='img-fluid' src='./gallery/". $row["name"] . "/" . $galleryArray[$i]. ".jpg' alt='Image of " . $row["spelt_name"] . " '>
+                                                <img class='img-fluid' src='./gallery/". $safeName . "/" . $galleryArray[$i]. ".jpg' alt='Image of " . $safeSpeltName . " '>
                                             </picture>
                                             " . $moneySymbol . "
                                         </div>
@@ -135,13 +154,12 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
                                         <div class='modal-dialog modal-xl'>
                                             <div class='modal-content'>
                                                 <div class='modal-header'>
-                                                    <h5 class='modal-title' id='exampleModalLabel'>" . $row["spelt_name"] . "</h5>
+                                                    <h5 class='modal-title' id='exampleModalLabel'>" . $safeSpeltName . "</h5>
                                                     <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                                                 </div>
                                                 <div class='modal-body '>
                                                     <picture>
-                                                        "//<source srcset='./gallery/". $row["name"] . "/" . $galleryArray[$i]. ".webp'>
-                                                        ."<img class='img-fluid' src='./gallery/". $row["name"] . "/" . $galleryArray[$i]. ".jpg' alt='Image of " . $row["spelt_name"]. " '>
+                                                        <img class='img-fluid' src='./gallery/". $safeName . "/" . $galleryArray[$i]. ".jpg' alt='Image of " . $safeSpeltName . " '>
                                                     </picture>
                                                 </div>
                                                 <div class='modal-footer text-center'>
@@ -155,11 +173,58 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
             }
         }
 
+                    //handles sponsors output
+                    require "db_connect.php";
+
+                    if ($connectToServer) {
+                        // Use $_GET to retrieve the 'location' parameter
+                        $randomId = rand(1, 5);
+                        $sql = "SELECT * FROM `sponsors` WHERE `id` = $randomId";
+                        $result = mysqli_query($connectToServer, $sql);
+                        
+                        if ($result) {
+                            if (mysqli_num_rows($result) > 0) {
+                                // Output data of each row
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    // Load variables and sanitize output for XSS attack
+                                    $sponsorName = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
+                                    $sponsorSpeltName = htmlspecialchars($row['speltname'], ENT_QUOTES, 'UTF-8');
+                                    $sponsorWriteUp = htmlspecialchars($row['writeup'], ENT_QUOTES, 'UTF-8');
+                                    $sponsorURL = htmlspecialchars($row['url'], ENT_QUOTES, 'UTF-8');
+                                    $sponsorimg = htmlspecialchars($row['img'], ENT_QUOTES, 'UTF-8');
+                                }
+                                // Output the sanitized sponsor name
+                               
+                            } else {
+                              
+                            }
+                        } else {
+                            // Error executing query
+                            echo "Error executing query: " . mysqli_error($connectToServer);
+                        }
+                        
+                        mysqli_close($connectToServer);
+                    } else {
+                        // Error connecting to the server
+                        echo "Error connecting to the database.";
+                    }
+        
+        
+                   
+                    $sponsorOutput = "      <small>Local Sponsor</small>
+                                            <a href='" . $sponsorURL . "' class='stretched-link'></a>
+                                            <div class='d-flex justify-content-center '>
+                                                <img class='img-fluid pb-3' width='60%' src='./img/sponsors/" . $sponsorimg . ".png'>
+                                            </div>
+                                            <h3 class='text-center text-uppercase'>" . $sponsorSpeltName . "<span class='text-orange'>.</span></h3>
+                                            <p>" . $sponsorWriteUp . "</p>";
+        
+
            echo "    
-           <title>YORKES.LIVE | " . $row['spelt_name'] .  " </title>
+           <title>YORKES.LIVE | " . $safeSpeltName .  " </title>
            <meta charset='UTF-8'>
-           <meta name='description' content='This is " . $row['spelt_name'] .  " on the sunny Yorke Peninsula. Come learn more about the beach and what it has to offer. Don&apos;t forget to vote for  " . $row['spelt_name'] .  " . '>
-           <meta name='keywords' content='yorkes " . $row['spelt_name'] .  " yorke peninsula beaches map best surf'>
+           <meta name='description' content='This is " . $safeSpeltName .  " on the sunny Yorke Peninsula. Come learn more about the beach and what it has to offer. Don&apos;t forget to vote for  " . $safeSpeltName .  " . '>
+           <meta name='keywords' content='yorkes " . $safeSpeltName .  " yorke peninsula beaches map best surf'>
            <meta name='author' content='Written by D.W. Hills, Length: 1 pages'>
            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
        
@@ -232,7 +297,7 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
 
 
 //this script sees if there is a image called pano in the gallery folder. if not use the default image.
-$directory = 'gallery/'. $row["name"].'/';
+$directory = 'gallery/'. $safeName .'/';
 $imageName = 'pano.jpg';
 
 // Check if the image file exists
@@ -241,7 +306,7 @@ $imagePath = $directory . $imageName;
 if (file_exists($imagePath)) {
 
     echo "
-    <div style=\"background-image: url('./gallery/". $row["name"]."/pano.jpg'); background-position:center; background-size:cover; height: 500px !important; position: relative; z-index: -1;\">
+    <div style=\"background-image: url('./gallery/". $safeName ."/pano.jpg'); background-position:center; background-size:cover; height: 500px !important; position: relative; z-index: -1;\">
         <p class='sideways-text lead h-100' style='position: absolute; top: 100px; z-index: 1; text-shadow: 0px 0px 5px black, 0px 0px 5px black, 0px 0px 10px black;'>
             <a class='text-white' style='text-decoration: none;' href='./browns/'>Panoramic</a> 
             <span class='squish'>-----------------------</span>
@@ -250,7 +315,7 @@ if (file_exists($imagePath)) {
     
     <div id='bg-wavesUD' class='p-0 m-0' style='margin-top: -80px !important; z-index: 2 !important;'></div>
     <div class='bg-rich'>
-        <p class='display-4 text-center feed-your-soul pb-2 text-white m-0'>" . $row['spelt_name'] . "</p>
+        <p class='display-4 text-center feed-your-soul pb-2 text-white m-0'>" . $safeSpeltName . "</p>
     </div>
     <div id='bg-waves' class='m-0 p-0' style='margin-top: -5px !important; z-index: 3 !important;'></div>
     ";
@@ -265,16 +330,16 @@ echo "
     <div class='text-light'>
         <div class='row gx-0'>
             <div class='mainlike-left col-6 bg-rich d-none d-sm-none d-md-block ' style='position:relative'>
-                <p class='display-4 text-center feed-your-soul ps-4'>" . $row['spelt_name'] . "</p>
+                <p class='display-4 text-center feed-your-soul ps-4'>" . $safeSpeltName . "</p>
                 <div class='vr'></div>
                 <p class='sideways-text lead h-100'>Beach vibes <span class='squish'>-----------------------</span></p>
             </div>
             <div class='mainlike-right col-md-6 bg-rich text-center'>
-                <p class='display-4 text-center feed-your-soul ps-4 d-md-none'>" . $row['spelt_name'] . "</p>
+                <p class='display-4 text-center feed-your-soul ps-4 d-md-none'>" . $safeSpeltName . "</p>
                 <div class='overflow-hidden'>
                     <picture>
-                        <source srcset='./img/big/" . $row["name"]. ".webp'>
-                        <img src='./img/big/" . $row["title_image"]. "' class='img-fluid' style='max-width: 400px;' alt='Image of " . $row["spelt_name"]. " '>
+                        <source srcset='./img/big/" . $safeName . ".webp'>
+                        <img src='./img/big/" . $safeTitleImage . "' class='img-fluid' style='max-width: 400px;' alt='Image of " . $safeSpeltName . " '>
                     </picture>
                 </div>
             </div>
@@ -301,10 +366,10 @@ echo "
     <div class='row my-3'>
         <div class='col-md-8'>
             <div class='col-12 border-rich p-3 bg-light h-100 clearfix'>
-                <h3 class='text-uppercase py-3'>More information about " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
-                <p>" . $row['big_write_up'] . "</p>
-                <h3 class='text-uppercase py-3'>History about " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
-                <p>" . $row['history'] . "</p>
+                <h3 class='text-uppercase py-3'>More information about " . $safeSpeltName . "<span class='text-orange'>.</span></h3>
+                <p>" . $safeBigWriteUp . "</p>
+                <h3 class='text-uppercase py-3'>History about " . $safeSpeltName . "<span class='text-orange'>.</span></h3>
+                <p>" . $safeHistory. "</p>
                 <small class='p-0 m-0 float-end'><a class='text-secondary' href='./index.php#contact' data-bs-toggle='tooltip' data-bs-placement='top' title='Take me to contact page.'>Not Correct? Something to add?</a></small>
             </div>
         </div>
@@ -316,12 +381,15 @@ echo "
                     </div>
                 </div>
                 <div class='col-12 border-rich bg-light text-center p-3'>
-                    <h3 class='text-uppercase'>Alternate names for " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
-                    <p>" . $row['alt_names'] . "</p>
+                    <h3 class='text-uppercase'>Alternate names for " . $safeSpeltName . "<span class='text-orange'>.</span></h3>
+                    <p>" . $safeAltNames . "</p>
+                </div> 
+                <div class='col-12 bg-light border-rich p-3 mt-3  position-relative'>
+                    <p>" . $sponsorOutput . "</p>
                 </div>
                 <div class='col-12 bg-light border-rich p-3 mt-3'>
                     <h3 class='text-center text-uppercase'>Surf Report<span class='text-orange'>.</span></h3>
-                    <p>" . $row["surf"] . "</p>
+                    <p>" . $safeSurf . "</p>
                 </div>
                 <div class='col-12 bg-light border-rich p-3 mt-3 clearfix'>
                     <h3 class='text-center text-uppercase'>What3Words Locations<span class='text-orange'>.</span></h3>
@@ -340,18 +408,18 @@ echo "
     <div class='row '>
         <div class='col-md-6 my-2'>
             <div class='col-12 border-rich bg-light p-3 h-100'>
-                <h3 class='text-center  text-uppercase'>Camping near " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
+                <h3 class='text-center  text-uppercase'>Camping near " . $safeSpeltName . "<span class='text-orange'>.</span></h3>
 
                 <ul>
-                    " . $row["camping"] . "
+                    " . $safeCamping. "
                 </ul>
             </div>
         </div>
         <div class='col-md-6 my-2'>
             <div class='col-12 border-rich bg-light p-3 h-100'>
-                <h3 class='text-center text-uppercase'>Accommodation near " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
+                <h3 class='text-center text-uppercase'>Accommodation near " . $safeSpeltName . "<span class='text-orange'>.</span></h3>
                 <ul>
-                    " . $row["accommodation"] . "
+                    " . $safeAccommodation . "
                 </ul>
             </div>
         </div>
@@ -360,7 +428,7 @@ echo "
 </div>
 <div class='container-fluid'>
     <div class='col-12'>
-        <h3 class='text-center my-3 text-uppercase'>Image Gallery of " . $row["spelt_name"] . "<span class='text-orange'>.</span></h3>
+        <h3 class='text-center my-3 text-uppercase'>Image Gallery of " . $safeSpeltName . "<span class='text-orange'>.</span></h3>
     </div>
     <div id='gallery' class='row' data-masonry='{' percentPosition': true }'>
 
@@ -375,7 +443,7 @@ echo "
         <div class='col-md-4 mb-3 order-md-first order-last'>
             <div class='col-12 text-center border-rich bg-light h-100 py-3' style='min-height: 600px;'>
                 <h3 class='text-uppercase'>Instagram Posts<span class='text-orange'>.</span></h3>
-                " . $row["instagram"] . "
+                " . $safeInstagram. "
                 <small class='feed-your-soul py-2 text-center'><a href='http://yorkes.live/contact'>Submit</a> your instgram posts to this section.</small>
 
             </div>
@@ -383,7 +451,7 @@ echo "
         <div class='col-md-8 mb-3 '>
             <div class='col-12 text-center border-rich bg-light p-0 h-100'>
 
-                " . $row["googlemap"] . "
+                " . $safeGoogleMaps . "
 
             </div>
         </div>
@@ -499,3 +567,4 @@ mysqli_close($connectToServer);
 }
 
 ?>
+

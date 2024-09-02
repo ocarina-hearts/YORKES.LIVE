@@ -192,6 +192,7 @@
                 <div class="mainlike-right col-12 col-md-6 bg-rich">
                     <h5 class="feed-your-soul py-2">What did you think of the interactive map?</h5>
                     <h5 class="py-3">Below is a static list of the beaches above. You can use the button below to give yourself 6 'shakas' to vote on your favourite beaches.</h5>
+                    <h5 class="py-3"><u>No login required.</u> Just click!</h5>
                     <form id="shakaform" class="py-3" method="POST">
                         <button id="shakabutton" type="submit" class="main-shakabutton btn position-relative border-2 rounded-0" type="button">
                             <h5 class="text-rich d-inline pt-2 px-4" style="float:left;">Start Voting</h5>
