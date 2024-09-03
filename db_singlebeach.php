@@ -173,52 +173,63 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
             }
         }
 
-                    //handles sponsors output
-                    require "db_connect.php";
+//handles sponsors output
+require "db_connect.php";
 
-                    if ($connectToServer) {
-                        // Use $_GET to retrieve the 'location' parameter
-                        $randomId = rand(1, 5);
-                        $sql = "SELECT * FROM `sponsors` WHERE `id` = $randomId";
-                        $result = mysqli_query($connectToServer, $sql);
-                        
-                        if ($result) {
-                            if (mysqli_num_rows($result) > 0) {
-                                // Output data of each row
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    // Load variables and sanitize output for XSS attack
-                                    $sponsorName = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
-                                    $sponsorSpeltName = htmlspecialchars($row['speltname'], ENT_QUOTES, 'UTF-8');
-                                    $sponsorWriteUp = htmlspecialchars($row['writeup'], ENT_QUOTES, 'UTF-8');
-                                    $sponsorURL = htmlspecialchars($row['url'], ENT_QUOTES, 'UTF-8');
-                                    $sponsorimg = htmlspecialchars($row['img'], ENT_QUOTES, 'UTF-8');
-                                }
-                                // Output the sanitized sponsor name
-                               
-                            } else {
-                              
-                            }
-                        } else {
-                            // Error executing query
-                            echo "Error executing query: " . mysqli_error($connectToServer);
-                        }
-                        
-                        mysqli_close($connectToServer);
-                    } else {
-                        // Error connecting to the server
-                        echo "Error connecting to the database.";
-                    }
-        
-        
-                   
-                    $sponsorOutput = "      <small>Local Sponsor</small>
-                                            <a href='" . $sponsorURL . "' class='stretched-link'></a>
-                                            <div class='d-flex justify-content-center '>
-                                                <img class='img-fluid pb-3' width='60%' src='./img/sponsors/" . $sponsorimg . ".png'>
-                                            </div>
-                                            <h3 class='text-center text-uppercase'>" . $sponsorSpeltName . "<span class='text-orange'>.</span></h3>
-                                            <p>" . $sponsorWriteUp . "</p>";
-        
+if ($connectToServer) {
+    // Use $_GET to retrieve the 'location' parameter
+    $randomId = rand(1, 5);
+    $sql = "SELECT * FROM `sponsors` WHERE `id` = $randomId";
+    $result = mysqli_query($connectToServer, $sql);
+    
+    if ($result) {
+        if (mysqli_num_rows($result) > 0) {
+            // Output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                // Load variables and sanitize output for XSS attack
+                $sponsorName = htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8');
+                $sponsorSpeltName = htmlspecialchars($row['speltname'], ENT_QUOTES, 'UTF-8');
+                $sponsorWriteUp = htmlspecialchars($row['writeup'], ENT_QUOTES, 'UTF-8');
+                $sponsorURL = htmlspecialchars($row['url'], ENT_QUOTES, 'UTF-8');
+                $sponsorimg = htmlspecialchars($row['img'], ENT_QUOTES, 'UTF-8');
+            }
+           
+            // Output the sponsor information as a clickable form
+             $sponsorOutput = "
+                <small>Local Sponsor</small>
+                <form id='sponsorForm' method='POST' action='log_and_redirect.php'>
+                    <input type='hidden' name='url' value='" . $sponsorURL . "'>
+                    <a href='#' id='sponsorLink' class='stretched-link'></a>
+                        <div class='d-flex justify-content-center'>
+                            <img class='img-fluid pb-3' width='60%' src='./img/sponsors/" . $sponsorimg . ".png'>
+                        </div>
+                        <h3 class='text-center text-uppercase text-reset'>" . $sponsorSpeltName . "<span class='text-orange'>.</span></h3>
+                        <p class='text-reset'>" . $sponsorWriteUp . "</p>
+                    
+                </form>
+
+                <script>
+                    document.getElementById('sponsorLink').addEventListener('click', function(e) {
+                        e.preventDefault(); // Prevent the default anchor behavior
+
+                        // Submit the form via JavaScript
+                        document.getElementById('sponsorForm').submit();
+                    });
+                </script>
+                ";
+        } else {
+            echo "No sponsors found.";
+        }
+    } else {
+        // Error executing query
+        echo "Error executing query: " . mysqli_error($connectToServer);
+    }
+    
+    mysqli_close($connectToServer);
+} else {
+    // Error connecting to the server
+    echo "Error connecting to the database.";
+}
 
            echo "    
            <title>YORKES.LIVE | " . $safeSpeltName .  " </title>
