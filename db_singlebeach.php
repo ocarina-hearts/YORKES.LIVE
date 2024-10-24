@@ -113,65 +113,90 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
              }
 
 
+// Scan the gallery directory for images
+$directoryPath = './gallery/' . $safeName . '/';
+$images = scandir($directoryPath);
 
+// Initialize gallery output
+$galleryOutput = "";
+$extraText = "";
 
+// Filter for valid image files
+$validImages = array_filter($images, function ($file) use ($directoryPath) {
+    $filePath = $directoryPath . $file;
+    return is_file($filePath) && preg_match('/\.(jpg|webp)$/i', $file);
+});
 
-            //handles gallery - vars it into big string below. 
-            $galleryArray = explode(",", htmlspecialchars($row['gallery'], ENT_QUOTES, 'UTF-8'));
-            $linkArray = explode(",", htmlspecialchars($row['gallery_link'], ENT_QUOTES, 'UTF-8'));
+if (count($validImages) === 0) {
+    $extraText = "We don't have any images for this beach.<br>";
+} else {
+    // Create an array to avoid duplicate base names
+    $usedBaseNames = [];
 
-	        $galleryOutput = ""; 
-            $extraText = "";
+    // Loop through valid images
+    foreach ($validImages as $file) {
+        // Extract base name without extension
+        $baseName = pathinfo($file, PATHINFO_FILENAME);
 
-            if (count($galleryArray) === 0) {
-                $extraText = "We dont have any images for this beach.<br>"; 
-            }
-            else {
-
-            for ($i = 0; $i < count($galleryArray); $i++) {
-
-                if ($linkArray[$i] != "nul"){
-                    $moneySymbol = "<i class='fa-solid fa-tag overflow-hidden' style='position:absolute; bottom:-5px; right:0px; font-size: 33px; color: #98DB4C;'></i>";
-                    $link = "<a href='" . $linkArray[$i] . "'>This image can be brought as a print here. - " . $linkArray[$i] . "</a>";
-
-                } else {
-                    $moneySymbol = "";
-                    $link = "<p>This image isn't for purchase. </p>";
-                }
-
-                $galleryOutput .= 
-                
-                "<div class='col-6 col-md-4 mb-3  grid-item'>
-                                    <a type='button' data-bs-toggle='modal' data-bs-target='#Modal-" . $galleryArray[$i]. "'>
-                                        <div class='hoverexpand'>
-                                            <picture>
-                                                <img class='img-fluid' src='./gallery/". $safeName . "/" . $galleryArray[$i]. ".jpg' alt='Image of " . $safeSpeltName . " '>
-                                            </picture>
-                                            " . $moneySymbol . "
-                                        </div>
-                                    </a>
-                                    <div class='modal fade' id='Modal-" . $galleryArray[$i]. "' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-                                        <div class='modal-dialog modal-xl'>
-                                            <div class='modal-content'>
-                                                <div class='modal-header'>
-                                                    <h5 class='modal-title' id='exampleModalLabel'>" . $safeSpeltName . "</h5>
-                                                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-                                                </div>
-                                                <div class='modal-body '>
-                                                    <picture>
-                                                        <img class='img-fluid' src='./gallery/". $safeName . "/" . $galleryArray[$i]. ".jpg' alt='Image of " . $safeSpeltName . " '>
-                                                    </picture>
-                                                </div>
-                                                <div class='modal-footer text-center'>
-                                                    " . $link . "
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>";
-
-            }
+        // Skip if the base name has already been processed or if it's a _thumb version
+        if (in_array($baseName, $usedBaseNames) || preg_match('/_thumb$/i', $baseName)) {
+            continue;
         }
+
+        // Mark this base name as processed
+        $usedBaseNames[] = $baseName;
+
+        // Check if .jpg or .webp exists for the same base name
+        $jpgPath = $directoryPath . $baseName . '.jpg';
+        $webpPath = $directoryPath . $baseName . '.webp';
+
+        // Check if the _thumb versions exist
+        $jpgThumbPath = $directoryPath . $baseName . '_thumb.jpg';
+        $webpThumbPath = $directoryPath . $baseName . '_thumb.webp';
+
+        // Determine the thumbnail path (use _thumb if it exists, else use original)
+        $thumbPath = file_exists($webpThumbPath) ? $webpThumbPath : (file_exists($jpgThumbPath) ? $jpgThumbPath : (file_exists($webpPath) ? $webpPath : $jpgPath));
+
+        // Set the preferred image for the modal (non-thumb version, prioritize webp, fallback to jpg)
+        $imgSrc = file_exists($webpPath) ? $webpPath : $jpgPath;
+
+        // Generate the output for each image  col-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2
+        $galleryOutput .= "
+        <div class='col-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2 mb-3 grid-item align-self-center'>
+            <a type='button' data-bs-toggle='modal' data-bs-target='#Modal-" . htmlspecialchars($baseName, ENT_QUOTES) . "'>
+                <div class='hoverexpand'>
+                    <picture>
+                        " . (file_exists($webpThumbPath) ? "<source srcset='" . htmlspecialchars($webpThumbPath, ENT_QUOTES) . "' type='image/webp'>" : "") . "
+                        " . (file_exists($jpgThumbPath) ? "<source srcset='" . htmlspecialchars($jpgThumbPath, ENT_QUOTES) . "' type='image/jpeg'>" : "") . "
+                        <img class='img-fluid' src='" . htmlspecialchars($thumbPath, ENT_QUOTES) . "' alt='Image of " . htmlspecialchars($safeSpeltName, ENT_QUOTES) . "'>
+                    </picture>
+                </div>
+            </a>
+            <div class='modal fade' id='Modal-" . htmlspecialchars($baseName, ENT_QUOTES) . "' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                <div class='modal-dialog modal-xl'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h5 class='modal-title' id='exampleModalLabel'>" . $safeSpeltName .  " </h5>
+                            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                        </div>
+                        <div class='modal-body d-flex justify-content-center align-items-center'>
+                            <picture>
+                                " . (file_exists($webpPath) ? "<source srcset='" . htmlspecialchars($webpPath, ENT_QUOTES) . "' type='image/webp'>" : "") . "
+                                " . (file_exists($jpgPath) ? "<source srcset='" . htmlspecialchars($jpgPath, ENT_QUOTES) . "' type='image/jpeg'>" : "") . "
+                                <img class='img-fluid' src='" . htmlspecialchars($imgSrc, ENT_QUOTES) . "' alt='Image of " . htmlspecialchars($safeSpeltName, ENT_QUOTES) . "' loading='lazy' style='max-width: 100%; max-height: 80vh;'>
+                            </picture>
+                        </div>
+                        <div class='modal-footer text-center'>
+                            <!-- Footer content (if needed) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>";
+    }
+}
+
+
 
 //handles sponsors output
 require "db_connect.php";
@@ -376,12 +401,12 @@ echo "
 <div class='container'>
     <div class='row my-3'>
         <div class='col-md-8'>
-            <div class='col-12 border-rich p-3 bg-light h-100 clearfix'>
+            <div class='col-12 d-flex flex-column border-rich p-3 bg-light h-100 clearfix'>
                 <h3 class='text-uppercase py-3'>More information about " . $safeSpeltName . "<span class='text-orange'>.</span></h3>
                 <p>" . $safeBigWriteUp . "</p>
                 <h3 class='text-uppercase py-3'>History about " . $safeSpeltName . "<span class='text-orange'>.</span></h3>
                 <p>" . $safeHistory. "</p>
-                <small class='p-0 m-0 float-end'><a class='text-secondary' href='./index.php#contact' data-bs-toggle='tooltip' data-bs-placement='top' title='Take me to contact page.'>Not Correct? Something to add?</a></small>
+                <small class='mt-auto p-0 m-0 d-flex justify-content-end'><a class='text-secondary' href='./index.php#contact' data-bs-toggle='tooltip' data-bs-placement='top' title='Take me to contact page.'>Not Correct? Something to add?</a></small>
             </div>
         </div>
         <div class='col-md-4'>
