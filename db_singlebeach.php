@@ -162,7 +162,7 @@ if (count($validImages) === 0) {
 
         // Generate the output for each image  col-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2
         $galleryOutput .= "
-        <div class='col-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2 mb-3 grid-item align-self-center'>
+        <div class='col-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2 mb-3 grid-item d-flex justify-content-center align-items-center>
             <a type='button' data-bs-toggle='modal' data-bs-target='#Modal-" . htmlspecialchars($baseName, ENT_QUOTES) . "'>
                 <div class='hoverexpand'>
                     <picture>
