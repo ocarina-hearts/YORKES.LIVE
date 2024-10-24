@@ -101,7 +101,7 @@ $cleanParam = isset($_GET['location']) ? preg_replace("/[^a-zA-Z0-9]+/", "", $_G
                                                 <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                                             </div>
                                             <div class='modal-body '>
-                                                        <iframe src='https://map.what3words.com/" . $w3wArray[$i]. "?utm_source=iframe' frameborder='0' style='border:0;width:100%;height:800px;'></iframe>
+                                                        <iframe title='Map location from what3words'  src='https://map.what3words.com/" . $w3wArray[$i]. "?utm_source=iframe' frameborder='0' style='border:0;width:100%;height:800px;'></iframe>
                                             </div>
                                             <div class='modal-footer text-center'>
                                                 <p>" . $w3wnameArray[$i]. "</p>
@@ -226,7 +226,7 @@ if ($connectToServer) {
                     <input type='hidden' name='url' value='" . $sponsorURL . "'>
                     <a href='#' id='sponsorLink' class='stretched-link'></a>
                         <div class='d-flex justify-content-center'>
-                            <img class='img-fluid pb-3' width='60%' src='./img/sponsors/" . $sponsorimg . ".png'>
+                            <img class='img-fluid pb-3' width='60%' src='./img/sponsors/" . $sponsorimg . ".png' alt='advertising logo for " . $sponsorSpeltName . "'>
                         </div>
                         <h3 class='text-center text-uppercase text-reset'>" . $sponsorSpeltName . "<span class='text-orange'>.</span></h3>
                         <p class='text-reset'>" . $sponsorWriteUp . "</p>
@@ -276,9 +276,6 @@ if ($connectToServer) {
            <link rel='icon' type='image/png' sizes='32x32' href='./favicon-32x32.png'>
            <link rel='icon' type='image/png' sizes='16x16' href='./favicon-16x16.png'>
            <link rel='manifest' href='/site.webmanifest'>
-       
-           <!-- MODEL VIEWER -->
-           <script type='module' src='https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js'></script>
        
            <!-- BOOTSTRAP CSSs -->
            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC'

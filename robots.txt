@@ -1,0 +1,14 @@
+# robots.txt for yorkes.live
+
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /*what3words.com*
+
+# Allow everything else
+Allow: /
+
+# Sitemap
+Sitemap: https://yorkes.live/sitemap.xml
