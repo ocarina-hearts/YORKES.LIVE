@@ -226,7 +226,7 @@ if ($connectToServer) {
                     <input type='hidden' name='url' value='" . $sponsorURL . "'>
                     <a href='#' id='sponsorLink' class='stretched-link'></a>
                         <div class='d-flex justify-content-center'>
-                            <img class='img-fluid pb-3' width='60%' src='./img/sponsors/" . $sponsorimg . ".png' alt='advertising logo for " . $sponsorSpeltName . "'>
+                            <img class='img-fluid pb-3' width='60%' src='./img/sponsors/" . $sponsorimg . ".webp' alt='advertising logo for " . $sponsorSpeltName . "'>
                         </div>
                         <h3 class='text-center text-uppercase text-reset'>" . $sponsorSpeltName . "<span class='text-orange'>.</span></h3>
                         <p class='text-reset'>" . $sponsorWriteUp . "</p>
